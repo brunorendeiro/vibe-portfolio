@@ -17,6 +17,7 @@ export const projectText: Record<Locale, Record<string, string>> = {
     algolab: 'Biblioteca visual de algoritmos de ordenação e pesquisa, com animação real, código e complexidade Big-O ao lado.',
     gamenight: 'Marcador de pontos para serões de jogos de tabuleiro: cria o jogo, junta os jogadores, regista pontos ronda a ronda e partilha a classificação final no WhatsApp. Tudo guardado no browser.',
     transitradius: 'Descobre as partidas de transportes públicos planeadas nas próximas horas à tua volta, na Suíça — geolocalização, raio configurável e filtros por tipo de transporte, sem tempo real, só horários oficiais.',
+    talktoon: 'Escreve uma frase, escolhe uma personagem em SVG e ouve-a dizê-la, com a boca sincronizada com a voz (Web Speech API) e a palavra atual destacada no balão de fala.',
   },
   en: {
     vibecheck: 'Four questions and a brutally honest verdict on whether an idea is worth building.',
@@ -33,6 +34,7 @@ export const projectText: Record<Locale, Record<string, string>> = {
     algolab: 'A visual library of sorting and searching algorithms, with real animation, code, and Big-O complexity side by side.',
     gamenight: 'A score tracker for board game nights: create a game, add players, log points round by round, and share the final standings on WhatsApp. Everything saved right in the browser.',
     transitradius: 'Find scheduled public transit departures near you, in Switzerland — geolocation, configurable radius, and transport-type filters, no real-time data, only official timetables.',
+    talktoon: 'Write a sentence, pick an SVG character, and hear it say it, with its mouth synced to the voice (Web Speech API) and the current word highlighted in the speech bubble.',
   },
   de: {
     vibecheck: 'Vier Fragen und ein brutal ehrliches Urteil darüber, ob eine Idee es wert ist, gebaut zu werden.',
@@ -49,6 +51,7 @@ export const projectText: Record<Locale, Record<string, string>> = {
     algolab: 'Eine visuelle Bibliothek von Sortier- und Suchalgorithmen, mit echter Animation, Code und Big-O-Komplexität nebeneinander.',
     gamenight: 'Ein Punktezähler für Spieleabende: Spiel erstellen, Spieler hinzufügen, Punkte Runde für Runde eintragen und die Endwertung per WhatsApp teilen. Alles wird direkt im Browser gespeichert.',
     transitradius: 'Finde geplante Abfahrten des öffentlichen Verkehrs in deiner Nähe, in der Schweiz — Geolokalisierung, einstellbarer Radius und Filter nach Verkehrsmittel, ohne Echtzeitdaten, nur offizielle Fahrpläne.',
+    talktoon: 'Schreib einen Satz, wähl eine SVG-Figur und hör sie ihn sagen — der Mund synchronisiert sich mit der Stimme (Web Speech API) und das aktuelle Wort wird in der Sprechblase hervorgehoben.',
   },
 }
 

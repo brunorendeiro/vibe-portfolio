@@ -1,7 +1,7 @@
 import type { CategoryKey, StatusKey } from '../i18n'
 
 // Glifo temático usado no cartão da app — ver `projectGlyphs` em App.tsx.
-export type ProjectGlyph = 'pulse' | 'compass' | 'map' | 'star' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice' | 'radar'
+export type ProjectGlyph = 'pulse' | 'compass' | 'map' | 'star' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice' | 'radar' | 'face'
 
 export type Project = {
   id: string
@@ -155,5 +155,15 @@ export const projects: Project[] = [
     url: 'https://transitradius.vercel.app/',
     accent: '#5eead4',
     icon: 'radar',
+  },
+  {
+    id: 'talktoon',
+    name: 'TalkToon',
+    category: 'web',
+    status: 'available',
+    technologies: ['React', 'TypeScript', 'Vite', 'Web Speech API', 'SVG Animation', 'i18n (PT/EN/DE)'],
+    url: 'https://talktoon.vercel.app/',
+    accent: '#f472b6',
+    icon: 'face',
   },
 ]

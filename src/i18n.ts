@@ -89,6 +89,14 @@ type UiStrings = {
   newsTitle: string
   newsBody: string
   resourceLinkLabel: string
+  learningKicker: string
+  learningTitle: string
+  playwrightTitle: string
+  playwrightBody: string
+  courseTitle: string
+  courseProvider: string
+  courseBody: string
+  courseInProgress: string
 }
 
 export const ui: Record<Locale, UiStrings> = {
@@ -151,6 +159,14 @@ export const ui: Record<Locale, UiStrings> = {
     newsTitle: 'Notícias de IA',
     newsBody: 'As últimas notícias sobre inteligência artificial, direto da fonte.',
     resourceLinkLabel: 'Ver mais',
+    learningKicker: 'A aprender agora',
+    learningTitle: 'Competências em construção',
+    playwrightTitle: 'Testes automáticos com Playwright',
+    playwrightBody: 'Exploração pessoal em paralelo ao trabalho: a criar testes automáticos para os projetos que desenvolvo.',
+    courseTitle: 'Curso Intensivo de Automação e Agentes com IA',
+    courseProvider: 'Code For All',
+    courseBody: 'Usa IA para construir automações e equipas de agentes que executam processos do teu trabalho.',
+    courseInProgress: 'A meio do curso',
   },
   en: {
     goHome: 'Go to homepage',
@@ -211,6 +227,14 @@ export const ui: Record<Locale, UiStrings> = {
     newsTitle: 'AI news',
     newsBody: 'The latest artificial intelligence news, straight from the source.',
     resourceLinkLabel: 'See more',
+    learningKicker: 'Currently learning',
+    learningTitle: 'Skills in progress',
+    playwrightTitle: 'Automated testing with Playwright',
+    playwrightBody: "A personal exploration alongside work: building automated tests for the projects I develop.",
+    courseTitle: 'Intensive Course on Automation and AI Agents',
+    courseProvider: 'Code For All',
+    courseBody: 'Uses AI to build automations and agent teams that run your work processes.',
+    courseInProgress: 'Halfway through the course',
   },
   de: {
     goHome: 'Zur Startseite',
@@ -271,5 +295,13 @@ export const ui: Record<Locale, UiStrings> = {
     newsTitle: 'KI-Neuigkeiten',
     newsBody: 'Die neuesten Nachrichten zu künstlicher Intelligenz, direkt von der Quelle.',
     resourceLinkLabel: 'Mehr sehen',
+    learningKicker: 'Aktuell am Lernen',
+    learningTitle: 'Fähigkeiten im Aufbau',
+    playwrightTitle: 'Automatisierte Tests mit Playwright',
+    playwrightBody: 'Persönliche Erkundung neben der Arbeit: automatisierte Tests für die Projekte bauen, die ich entwickle.',
+    courseTitle: 'Intensivkurs für Automatisierung und KI-Agenten',
+    courseProvider: 'Code For All',
+    courseBody: 'Nutzt KI, um Automatisierungen und Agenten-Teams zu bauen, die deine Arbeitsprozesse ausführen.',
+    courseInProgress: 'Kurs zur Hälfte abgeschlossen',
   },
 }

@@ -170,6 +170,11 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .resource-card h3 { margin: 0 0 6px; font: 600 18px 'Fraunces', serif; }
 .resource-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
 .resource-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; color: var(--accent); font-size: 12px; font-weight: 700; }
+.resource-card.static { cursor: default; }
+.resource-card.static:hover { transform: none; box-shadow: 5px 5px 0 0 var(--shadow); }
+.learning-provider { margin-top: 2px !important; color: var(--accent) !important; font: 700 10px 'Space Mono', monospace !important; text-transform: uppercase; letter-spacing: .08em; }
+.learning-progress { display: inline-flex; align-items: center; gap: 7px; margin-top: 12px; color: var(--muted); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+.learning-progress i { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-2); }
 
 .apps-page { min-height: calc(100vh - 76px); }
 .page-intro { padding: 76px 0 44px; }

@@ -28,6 +28,8 @@ const icons = {
   moon: <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/>,
   trophy: <><path d="M8 21h8M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4Z"/><path d="M7 6H4a3 3 0 0 0 3 3M17 6h3a3 3 0 0 1-3 3"/></>,
   news: <><rect x="3" y="5" width="18" height="15" rx="2"/><path d="M7 9h6M7 13h10M7 17h6"/></>,
+  test: <><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 5-5"/></>,
+  course: <><path d="M4 6a2 2 0 0 1 2-2h6v16H6a2 2 0 0 1-2-2V6Z"/><path d="M20 6a2 2 0 0 0-2-2h-6v16h6a2 2 0 0 0 2-2V6Z"/></>,
 }
 
 function Icon({ name, size = 20 }: { name: keyof typeof icons; size?: number }) {
@@ -156,7 +158,7 @@ function NavBar({ route, navigate, theme, toggleTheme, locale, setLocale, open, 
   </header>
 }
 
-const tickerItems = ['REACT', 'TYPESCRIPT', 'PYTHON', 'OUTSYSTEMS', 'FASTAPI', 'IA GENERATIVA', 'VITE', 'AGENTIC AI']
+const tickerItems = ['REACT', 'TYPESCRIPT', 'PYTHON', 'OUTSYSTEMS', 'FASTAPI', 'IA GENERATIVA', 'VITE', 'AGENTIC AI', 'PLAYWRIGHT', 'N8N']
 
 function Ticker() {
   const items = [...tickerItems, ...tickerItems]
@@ -253,6 +255,28 @@ function Dashboard({ navigate, locale }: { navigate: (route: Route) => void; loc
             <span className="resource-link">{t.resourceLinkLabel} <Icon name="external" size={15} /></span>
           </div>
         </a>
+      </div>
+    </section>
+
+    <section className="section-block learning-section">
+      <div className="section-heading"><div><span>{t.learningKicker}</span><h2>{t.learningTitle}</h2></div></div>
+      <div className="resources-grid">
+        <div className="resource-card static">
+          <span className="resource-icon"><Icon name="test" size={22} /></span>
+          <div>
+            <h3>{t.playwrightTitle}</h3>
+            <p>{t.playwrightBody}</p>
+          </div>
+        </div>
+        <div className="resource-card static">
+          <span className="resource-icon"><Icon name="course" size={22} /></span>
+          <div>
+            <h3>{t.courseTitle}</h3>
+            <p className="learning-provider">{t.courseProvider}</p>
+            <p>{t.courseBody}</p>
+            <span className="learning-progress"><i /> {t.courseInProgress}</span>
+          </div>
+        </div>
       </div>
     </section>
   </main>

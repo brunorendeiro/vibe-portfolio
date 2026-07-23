@@ -14,6 +14,7 @@ export const projectText: Record<Locale, Record<string, string>> = {
     zahlendrill: 'Flashcards, quizzes e pronúncia (Web Speech API) para dominar os números em alemão, de 0 a 1000. Disponível em PT, EN e DE.',
     skycheck: 'Temperatura e previsão para qualquer localização, via Open-Meteo — sem contas nem chaves de API. Disponível em PT, EN e DE.',
     pathfinder: 'Visualizador interativo de algoritmos de pathfinding: BFS, Dijkstra e A* a percorrer uma grelha em tempo real. Desenha paredes e arrasta o início/fim.',
+    algolab: 'Biblioteca visual de algoritmos de ordenação e pesquisa, com animação real, código e complexidade Big-O ao lado.',
   },
   en: {
     vibecheck: 'Four questions and a brutally honest verdict on whether an idea is worth building.',
@@ -27,6 +28,7 @@ export const projectText: Record<Locale, Record<string, string>> = {
     zahlendrill: 'Flashcards, quizzes and pronunciation (Web Speech API) to master German numbers, from 0 to 1000. Available in PT, EN and DE.',
     skycheck: 'Temperature and forecast for any location, via Open-Meteo — no accounts, no API keys. Available in PT, EN and DE.',
     pathfinder: 'Interactive pathfinding algorithm visualizer: BFS, Dijkstra and A* searching a grid in real time. Draw walls and drag the start/end markers.',
+    algolab: 'A visual library of sorting and searching algorithms, with real animation, code, and Big-O complexity side by side.',
   },
   de: {
     vibecheck: 'Vier Fragen und ein brutal ehrliches Urteil darüber, ob eine Idee es wert ist, gebaut zu werden.',
@@ -40,6 +42,7 @@ export const projectText: Record<Locale, Record<string, string>> = {
     zahlendrill: 'Karteikarten, Quiz und Aussprache (Web Speech API), um Zahlen auf Deutsch zu meistern, von 0 bis 1000. Verfügbar auf PT, EN und DE.',
     skycheck: 'Temperatur und Vorhersage für jeden Ort, über Open-Meteo — keine Konten, keine API-Schlüssel. Verfügbar auf PT, EN und DE.',
     pathfinder: 'Interaktiver Visualisierer für Pathfinding-Algorithmen: BFS, Dijkstra und A* durchsuchen ein Raster in Echtzeit. Wände zeichnen, Start/Ziel verschieben.',
+    algolab: 'Eine visuelle Bibliothek von Sortier- und Suchalgorithmen, mit echter Animation, Code und Big-O-Komplexität nebeneinander.',
   },
 }
 

@@ -1,7 +1,7 @@
 import type { CategoryKey, StatusKey } from '../i18n'
 
 // Glifo temático usado no cartão da app — ver `projectGlyphs` em App.tsx.
-export type ProjectGlyph = 'pulse' | 'compass' | 'map' | 'star' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route'
+export type ProjectGlyph = 'pulse' | 'compass' | 'map' | 'star' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars'
 
 export type Project = {
   id: string
@@ -125,5 +125,15 @@ export const projects: Project[] = [
     url: 'https://pathfinder-plum-seven.vercel.app/',
     accent: '#2dd4bf',
     icon: 'route',
+  },
+  {
+    id: 'algolab',
+    name: 'AlgoLab',
+    category: 'web',
+    status: 'available',
+    technologies: ['React', 'TypeScript', 'Vite', 'Algorithms'],
+    url: 'https://algolab-eta.vercel.app/',
+    accent: '#a78bfa',
+    icon: 'bars',
   },
 ]

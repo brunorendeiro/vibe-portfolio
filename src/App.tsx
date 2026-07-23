@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState, type ReactElement } from 'react'
 import { projects, type Project, type ProjectGlyph } from './data/apps'
 import { getProjectDescription } from './data/projectText'
 import { categoryLabels, detectLocale, locales, statusLabels, ui, type CategoryKey, type Locale } from './i18n'
+import { getStoredConsent, loadAnalytics } from './analytics'
+import CookieConsent from './CookieConsent'
 
 type Route = '/' | '/apps'
 type Filter = 'all' | CategoryKey
@@ -332,6 +334,10 @@ export default function App() {
   useEffect(() => { setMenuOpen(false) }, [route])
 
   useEffect(() => {
+    if (getStoredConsent() === 'granted') loadAnalytics()
+  }, [])
+
+  useEffect(() => {
     if (!menuOpen) return
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setMenuOpen(false)
@@ -344,5 +350,6 @@ export default function App() {
     <NavBar route={route} navigate={navigate} theme={theme} toggleTheme={toggleTheme} locale={locale} setLocale={setLocale} open={menuOpen} setOpen={setMenuOpen} />
     {route === '/' ? <Dashboard navigate={navigate} locale={locale} /> : <AppsPage locale={locale} />}
     <footer><span>© {new Date().getFullYear()} Bruno Rendeiro</span><span>{t.footerTagline}</span></footer>
+    <CookieConsent locale={locale} />
   </div>
 }

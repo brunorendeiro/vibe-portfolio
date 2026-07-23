@@ -101,6 +101,10 @@ type UiStrings = {
   friendsTitle: string
   toolboxTitle: string
   toolboxBody: string
+  cookieTitle: string
+  cookieBody: string
+  cookieAccept: string
+  cookieReject: string
 }
 
 export const ui: Record<Locale, UiStrings> = {
@@ -175,6 +179,10 @@ export const ui: Record<Locale, UiStrings> = {
     friendsTitle: 'Também vale a pena espreitar',
     toolboxTitle: 'Toolbox, por Alexa',
     toolboxBody: 'Uma caixa de ferramentas online gratuita — calculadoras, conversores, geradores e mais, feita pela minha mulher.',
+    cookieTitle: 'Cookies',
+    cookieBody: 'Uso o Google Analytics para perceber quantas pessoas visitam os meus projetos. Aceitas cookies analíticos?',
+    cookieAccept: 'Aceitar',
+    cookieReject: 'Recusar',
   },
   en: {
     goHome: 'Go to homepage',
@@ -247,6 +255,10 @@ export const ui: Record<Locale, UiStrings> = {
     friendsTitle: 'Also worth a look',
     toolboxTitle: 'Toolbox, by Alexa',
     toolboxBody: 'A free online toolbox — calculators, converters, generators and more, made by my wife.',
+    cookieTitle: 'Cookies',
+    cookieBody: 'I use Google Analytics to understand how many people visit my projects. Do you accept analytics cookies?',
+    cookieAccept: 'Accept',
+    cookieReject: 'Reject',
   },
   de: {
     goHome: 'Zur Startseite',
@@ -319,5 +331,9 @@ export const ui: Record<Locale, UiStrings> = {
     friendsTitle: 'Auch einen Blick wert',
     toolboxTitle: 'Toolbox, von Alexa',
     toolboxBody: 'Eine kostenlose Online-Toolbox — Rechner, Umrechner, Generatoren und mehr, gemacht von meiner Frau.',
+    cookieTitle: 'Cookies',
+    cookieBody: 'Ich verwende Google Analytics, um zu verstehen, wie viele Menschen meine Projekte besuchen. Akzeptierst du Analyse-Cookies?',
+    cookieAccept: 'Akzeptieren',
+    cookieReject: 'Ablehnen',
   },
 }

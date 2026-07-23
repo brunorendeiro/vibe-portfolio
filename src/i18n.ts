@@ -97,6 +97,10 @@ type UiStrings = {
   courseProvider: string
   courseBody: string
   courseInProgress: string
+  friendsKicker: string
+  friendsTitle: string
+  toolboxTitle: string
+  toolboxBody: string
 }
 
 export const ui: Record<Locale, UiStrings> = {
@@ -167,6 +171,10 @@ export const ui: Record<Locale, UiStrings> = {
     courseProvider: 'Code For All',
     courseBody: 'Usa IA para construir automações e equipas de agentes que executam processos do teu trabalho.',
     courseInProgress: 'A meio do curso',
+    friendsKicker: 'Fora do meu trabalho',
+    friendsTitle: 'Também vale a pena espreitar',
+    toolboxTitle: 'Toolbox, por Alexa',
+    toolboxBody: 'Uma caixa de ferramentas online gratuita — calculadoras, conversores, geradores e mais, feita pela minha mulher.',
   },
   en: {
     goHome: 'Go to homepage',
@@ -235,6 +243,10 @@ export const ui: Record<Locale, UiStrings> = {
     courseProvider: 'Code For All',
     courseBody: 'Uses AI to build automations and agent teams that run your work processes.',
     courseInProgress: 'Halfway through the course',
+    friendsKicker: 'Outside my work',
+    friendsTitle: 'Also worth a look',
+    toolboxTitle: 'Toolbox, by Alexa',
+    toolboxBody: 'A free online toolbox — calculators, converters, generators and more, made by my wife.',
   },
   de: {
     goHome: 'Zur Startseite',
@@ -303,5 +315,9 @@ export const ui: Record<Locale, UiStrings> = {
     courseProvider: 'Code For All',
     courseBody: 'Nutzt KI, um Automatisierungen und Agenten-Teams zu bauen, die deine Arbeitsprozesse ausführen.',
     courseInProgress: 'Kurs zur Hälfte abgeschlossen',
+    friendsKicker: 'Abseits meiner Arbeit',
+    friendsTitle: 'Auch einen Blick wert',
+    toolboxTitle: 'Toolbox, von Alexa',
+    toolboxBody: 'Eine kostenlose Online-Toolbox — Rechner, Umrechner, Generatoren und mehr, gemacht von meiner Frau.',
   },
 }

@@ -10,6 +10,7 @@ const contactEmail = 'brunorendeiro88@gmail.com'
 const cvUrl = 'https://personal-3gam9sjy.outsystemscloud.com/BRendeiroCV/Home'
 const leaderboardUrl = 'https://arena.ai/leaderboard/agent'
 const aiNewsUrl = 'https://techcrunch.com/category/artificial-intelligence/'
+const toolboxUrl = 'https://toolbox-by-alexa.vercel.app/tools'
 
 const icons = {
   dashboard: <><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></>,
@@ -29,6 +30,7 @@ const icons = {
   news: <><rect x="3" y="5" width="18" height="15" rx="2"/><path d="M7 9h6M7 13h10M7 17h6"/></>,
   test: <><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 5-5"/></>,
   course: <><path d="M4 6a2 2 0 0 1 2-2h6v16H6a2 2 0 0 1-2-2V6Z"/><path d="M20 6a2 2 0 0 0-2-2h-6v16h6a2 2 0 0 0 2-2V6Z"/></>,
+  toolbox: <><path d="M4 10h16v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-9Z"/><path d="M8 10V7a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3"/><path d="M4 14h16"/></>,
 }
 
 function Icon({ name, size = 20 }: { name: keyof typeof icons; size?: number }) {
@@ -279,6 +281,20 @@ function Dashboard({ navigate, locale }: { navigate: (route: Route) => void; loc
             <span className="learning-progress"><i /> {t.courseInProgress}</span>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section className="section-block friends-section">
+      <div className="section-heading"><div><span>{t.friendsKicker}</span><h2>{t.friendsTitle}</h2></div></div>
+      <div className="resources-grid">
+        <a className="resource-card" href={toolboxUrl} target="_blank" rel="noreferrer">
+          <span className="resource-icon"><Icon name="toolbox" size={22} /></span>
+          <div>
+            <h3>{t.toolboxTitle}</h3>
+            <p>{t.toolboxBody}</p>
+            <span className="resource-link">{t.resourceLinkLabel} <Icon name="external" size={15} /></span>
+          </div>
+        </a>
       </div>
     </section>
   </main>

@@ -13,6 +13,7 @@ export const projectText: Record<Locale, Record<string, string>> = {
     bugsweeper: 'Campo minado educativo: cada mina escondida é uma vulnerabilidade web real (SQLi, XSS, SSRF...), explicada quando a encontras. Disponível em PT, EN e DE.',
     zahlendrill: 'Flashcards, quizzes e pronúncia (Web Speech API) para dominar os números em alemão, de 0 a 1000. Disponível em PT, EN e DE.',
     skycheck: 'Temperatura e previsão para qualquer localização, via Open-Meteo — sem contas nem chaves de API. Disponível em PT, EN e DE.',
+    pathfinder: 'Visualizador interativo de algoritmos de pathfinding: BFS, Dijkstra e A* a percorrer uma grelha em tempo real. Desenha paredes e arrasta o início/fim.',
   },
   en: {
     vibecheck: 'Four questions and a brutally honest verdict on whether an idea is worth building.',
@@ -25,6 +26,7 @@ export const projectText: Record<Locale, Record<string, string>> = {
     bugsweeper: 'An educational minesweeper: every hidden mine is a real web vulnerability (SQLi, XSS, SSRF...), explained when you find it. Available in PT, EN and DE.',
     zahlendrill: 'Flashcards, quizzes and pronunciation (Web Speech API) to master German numbers, from 0 to 1000. Available in PT, EN and DE.',
     skycheck: 'Temperature and forecast for any location, via Open-Meteo — no accounts, no API keys. Available in PT, EN and DE.',
+    pathfinder: 'Interactive pathfinding algorithm visualizer: BFS, Dijkstra and A* searching a grid in real time. Draw walls and drag the start/end markers.',
   },
   de: {
     vibecheck: 'Vier Fragen und ein brutal ehrliches Urteil darüber, ob eine Idee es wert ist, gebaut zu werden.',
@@ -37,6 +39,7 @@ export const projectText: Record<Locale, Record<string, string>> = {
     bugsweeper: 'Ein lehrreiches Minesweeper: Jede versteckte Mine ist eine echte Web-Schwachstelle (SQLi, XSS, SSRF...), erklärt, sobald du sie findest. Verfügbar auf PT, EN und DE.',
     zahlendrill: 'Karteikarten, Quiz und Aussprache (Web Speech API), um Zahlen auf Deutsch zu meistern, von 0 bis 1000. Verfügbar auf PT, EN und DE.',
     skycheck: 'Temperatur und Vorhersage für jeden Ort, über Open-Meteo — keine Konten, keine API-Schlüssel. Verfügbar auf PT, EN und DE.',
+    pathfinder: 'Interaktiver Visualisierer für Pathfinding-Algorithmen: BFS, Dijkstra und A* durchsuchen ein Raster in Echtzeit. Wände zeichnen, Start/Ziel verschieben.',
   },
 }
 

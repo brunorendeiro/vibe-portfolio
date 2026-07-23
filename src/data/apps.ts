@@ -1,7 +1,7 @@
 import type { CategoryKey, StatusKey } from '../i18n'
 
 // Glifo temático usado no cartão da app — ver `projectGlyphs` em App.tsx.
-export type ProjectGlyph = 'pulse' | 'compass' | 'map' | 'star' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather'
+export type ProjectGlyph = 'pulse' | 'compass' | 'map' | 'star' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route'
 
 export type Project = {
   id: string
@@ -115,5 +115,15 @@ export const projects: Project[] = [
     url: 'https://skycheck-seven.vercel.app/',
     accent: '#4d9fff',
     icon: 'weather',
+  },
+  {
+    id: 'pathfinder',
+    name: 'Pathfinder',
+    category: 'web',
+    status: 'available',
+    technologies: ['React', 'TypeScript', 'Vite', 'Algorithms', 'DOM animation'],
+    url: 'https://pathfinder-plum-seven.vercel.app/',
+    accent: '#2dd4bf',
+    icon: 'route',
   },
 ]

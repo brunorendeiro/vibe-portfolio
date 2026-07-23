@@ -48,6 +48,7 @@ const projectGlyphs: Record<ProjectGlyph, ReactElement> = {
   flag: <><path d="M6 3v18" /><path d="M6 4h11l-3 4 3 4H6" /></>,
   numbers: <><path d="M5 9h14M5 15h14M9 4 7 20M17 4l-2 16" /></>,
   weather: <><circle cx="7" cy="6" r="2.3" /><path d="M7 1.7v1.3M2.6 3.4l1 1M1.3 6h1.3" /><path d="M9 18h7.5a3.5 3.5 0 0 0 .5-6.96A5.5 5.5 0 0 0 7.2 9.6 4 4 0 0 0 9 18Z" /></>,
+  route: <><circle cx="5" cy="19" r="2" /><circle cx="19" cy="5" r="2" /><path d="M6.5 17.5 11 12l2 2 4.5-5.5" /></>,
 }
 
 function ProjectGlyphIcon({ name, size = 30 }: { name: ProjectGlyph; size?: number }) {

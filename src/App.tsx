@@ -8,7 +8,6 @@ type Filter = 'all' | CategoryKey
 type Theme = 'dark' | 'light'
 const contactEmail = 'brunorendeiro88@gmail.com'
 const cvUrl = 'https://personal-3gam9sjy.outsystemscloud.com/BRendeiroCV/Home'
-const certificationsUrl = 'https://www.outsystems.com/profile/pzbqpryzri/overview'
 const leaderboardUrl = 'https://arena.ai/leaderboard/agent'
 const aiNewsUrl = 'https://techcrunch.com/category/artificial-intelligence/'
 
@@ -128,7 +127,6 @@ function NavBar({ route, navigate, theme, toggleTheme, locale, setLocale, open, 
 
       <div className="navbar-actions">
         <a className="nav-text-link" href={cvUrl} target="_blank" rel="noreferrer">{t.navCv}</a>
-        <a className="nav-text-link" href={certificationsUrl} target="_blank" rel="noreferrer">{t.navCertifications}</a>
         <div className="locale-switch" role="group" aria-label="Language">
           {locales.map(item => (
             <button key={item.id} className={locale === item.id ? 'active' : ''} onClick={() => setLocale(item.id)}>{item.label}</button>
@@ -148,7 +146,6 @@ function NavBar({ route, navigate, theme, toggleTheme, locale, setLocale, open, 
       <button className={route === '/' ? 'active' : ''} onClick={() => go('/')}><Icon name="dashboard" size={18} />{t.navDashboard}</button>
       <button className={route === '/apps' ? 'active' : ''} onClick={() => go('/apps')}><Icon name="apps" size={18} />{t.navApps}<span className="nav-count">{projects.length}</span></button>
       <a href={cvUrl} target="_blank" rel="noreferrer"><Icon name="document" size={18} />{t.navMobileCv}</a>
-      <a href={certificationsUrl} target="_blank" rel="noreferrer"><Icon name="badge" size={18} />{t.navMobileCertifications}</a>
       <a href={`mailto:${contactEmail}`}><Icon name="mail" size={18} />{t.navTalk}</a>
       <div className="locale-switch mobile">
         {locales.map(item => (

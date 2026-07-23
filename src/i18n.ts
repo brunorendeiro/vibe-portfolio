@@ -82,6 +82,13 @@ type UiStrings = {
   linkSoon: string
   sourceLabel: string
   footerTagline: string
+  resourcesKicker: string
+  resourcesTitle: string
+  leaderboardTitle: string
+  leaderboardBody: string
+  newsTitle: string
+  newsBody: string
+  resourceLinkLabel: string
 }
 
 export const ui: Record<Locale, UiStrings> = {
@@ -137,6 +144,13 @@ export const ui: Record<Locale, UiStrings> = {
     linkSoon: 'Link em breve',
     sourceLabel: 'Código de',
     footerTagline: 'Imaginado por um humano. Construído com IA.',
+    resourcesKicker: 'Recursos',
+    resourcesTitle: 'A acompanhar o ecossistema de IA',
+    leaderboardTitle: 'Leaderboard de modelos',
+    leaderboardBody: 'Ranking atualizado dos modelos de IA mais fortes do momento.',
+    newsTitle: 'Notícias de IA',
+    newsBody: 'As últimas notícias sobre inteligência artificial, direto da fonte.',
+    resourceLinkLabel: 'Ver mais',
   },
   en: {
     goHome: 'Go to homepage',
@@ -190,6 +204,13 @@ export const ui: Record<Locale, UiStrings> = {
     linkSoon: 'Link coming soon',
     sourceLabel: 'Source code for',
     footerTagline: 'Imagined by a human. Built with AI.',
+    resourcesKicker: 'Resources',
+    resourcesTitle: 'Keeping up with the AI ecosystem',
+    leaderboardTitle: 'Model leaderboard',
+    leaderboardBody: 'An up-to-date ranking of the strongest AI models right now.',
+    newsTitle: 'AI news',
+    newsBody: 'The latest artificial intelligence news, straight from the source.',
+    resourceLinkLabel: 'See more',
   },
   de: {
     goHome: 'Zur Startseite',
@@ -243,5 +264,12 @@ export const ui: Record<Locale, UiStrings> = {
     linkSoon: 'Link folgt bald',
     sourceLabel: 'Quellcode von',
     footerTagline: 'Von einem Menschen erdacht. Mit KI gebaut.',
+    resourcesKicker: 'Ressourcen',
+    resourcesTitle: 'Am Puls des KI-Ökosystems',
+    leaderboardTitle: 'Modell-Rangliste',
+    leaderboardBody: 'Ein aktuelles Ranking der stärksten KI-Modelle im Moment.',
+    newsTitle: 'KI-Neuigkeiten',
+    newsBody: 'Die neuesten Nachrichten zu künstlicher Intelligenz, direkt von der Quelle.',
+    resourceLinkLabel: 'Mehr sehen',
   },
 }

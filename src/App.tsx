@@ -9,6 +9,8 @@ type Theme = 'dark' | 'light'
 const contactEmail = 'brunorendeiro88@gmail.com'
 const cvUrl = 'https://personal-3gam9sjy.outsystemscloud.com/BRendeiroCV/Home'
 const certificationsUrl = 'https://www.outsystems.com/profile/pzbqpryzri/overview'
+const leaderboardUrl = 'https://arena.ai/leaderboard/agent'
+const aiNewsUrl = 'https://techcrunch.com/category/artificial-intelligence/'
 
 const icons = {
   dashboard: <><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></>,
@@ -24,6 +26,8 @@ const icons = {
   badge: <><circle cx="12" cy="9" r="5"/><path d="m8.5 13.5-1.5 7 5-3 5 3-1.5-7"/></>,
   sun: <><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v3M12 18.5v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2.5 12h3M18.5 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></>,
   moon: <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/>,
+  trophy: <><path d="M8 21h8M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4Z"/><path d="M7 6H4a3 3 0 0 0 3 3M17 6h3a3 3 0 0 1-3 3"/></>,
+  news: <><rect x="3" y="5" width="18" height="15" rx="2"/><path d="M7 9h6M7 13h10M7 17h6"/></>,
 }
 
 function Icon({ name, size = 20 }: { name: keyof typeof icons; size?: number }) {
@@ -228,6 +232,28 @@ function Dashboard({ navigate, locale }: { navigate: (route: Route) => void; loc
         <li><span>02</span><div><strong>{t.processStep2Title}</strong><p>{t.processStep2Body}</p></div></li>
         <li><span>03</span><div><strong>{t.processStep3Title}</strong><p>{t.processStep3Body}</p></div></li>
       </ol>
+    </section>
+
+    <section className="section-block resources-section">
+      <div className="section-heading"><div><span>{t.resourcesKicker}</span><h2>{t.resourcesTitle}</h2></div></div>
+      <div className="resources-grid">
+        <a className="resource-card" href={leaderboardUrl} target="_blank" rel="noreferrer">
+          <span className="resource-icon"><Icon name="trophy" size={22} /></span>
+          <div>
+            <h3>{t.leaderboardTitle}</h3>
+            <p>{t.leaderboardBody}</p>
+            <span className="resource-link">{t.resourceLinkLabel} <Icon name="external" size={15} /></span>
+          </div>
+        </a>
+        <a className="resource-card" href={aiNewsUrl} target="_blank" rel="noreferrer">
+          <span className="resource-icon"><Icon name="news" size={22} /></span>
+          <div>
+            <h3>{t.newsTitle}</h3>
+            <p>{t.newsBody}</p>
+            <span className="resource-link">{t.resourceLinkLabel} <Icon name="external" size={15} /></span>
+          </div>
+        </a>
+      </div>
     </section>
   </main>
 }

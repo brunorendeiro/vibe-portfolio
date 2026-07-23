@@ -1,7 +1,7 @@
 import type { CategoryKey, StatusKey } from '../i18n'
 
 // Glifo temático usado no cartão da app — ver `projectGlyphs` em App.tsx.
-export type ProjectGlyph = 'pulse' | 'compass' | 'map' | 'star' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars'
+export type ProjectGlyph = 'pulse' | 'compass' | 'map' | 'star' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice'
 
 export type Project = {
   id: string
@@ -135,5 +135,15 @@ export const projects: Project[] = [
     url: 'https://algolab-eta.vercel.app/',
     accent: '#a78bfa',
     icon: 'bars',
+  },
+  {
+    id: 'gamenight',
+    name: 'GameNight',
+    category: 'web',
+    status: 'available',
+    technologies: ['React', 'TypeScript', 'Vite', 'Local Storage', 'WhatsApp Share'],
+    url: 'https://gamenight-two.vercel.app/',
+    accent: '#ff4d94',
+    icon: 'dice',
   },
 ]

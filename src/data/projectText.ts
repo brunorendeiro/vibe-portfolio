@@ -15,6 +15,7 @@ export const projectText: Record<Locale, Record<string, string>> = {
     skycheck: 'Temperatura e previsão para qualquer localização, via Open-Meteo — sem contas nem chaves de API. Disponível em PT, EN e DE.',
     pathfinder: 'Visualizador interativo de algoritmos de pathfinding: BFS, Dijkstra e A* a percorrer uma grelha em tempo real. Desenha paredes e arrasta o início/fim.',
     algolab: 'Biblioteca visual de algoritmos de ordenação e pesquisa, com animação real, código e complexidade Big-O ao lado.',
+    gamenight: 'Marcador de pontos para serões de jogos de tabuleiro: cria o jogo, junta os jogadores, regista pontos ronda a ronda e partilha a classificação final no WhatsApp. Tudo guardado no browser.',
   },
   en: {
     vibecheck: 'Four questions and a brutally honest verdict on whether an idea is worth building.',
@@ -29,6 +30,7 @@ export const projectText: Record<Locale, Record<string, string>> = {
     skycheck: 'Temperature and forecast for any location, via Open-Meteo — no accounts, no API keys. Available in PT, EN and DE.',
     pathfinder: 'Interactive pathfinding algorithm visualizer: BFS, Dijkstra and A* searching a grid in real time. Draw walls and drag the start/end markers.',
     algolab: 'A visual library of sorting and searching algorithms, with real animation, code, and Big-O complexity side by side.',
+    gamenight: 'A score tracker for board game nights: create a game, add players, log points round by round, and share the final standings on WhatsApp. Everything saved right in the browser.',
   },
   de: {
     vibecheck: 'Vier Fragen und ein brutal ehrliches Urteil darüber, ob eine Idee es wert ist, gebaut zu werden.',
@@ -43,6 +45,7 @@ export const projectText: Record<Locale, Record<string, string>> = {
     skycheck: 'Temperatur und Vorhersage für jeden Ort, über Open-Meteo — keine Konten, keine API-Schlüssel. Verfügbar auf PT, EN und DE.',
     pathfinder: 'Interaktiver Visualisierer für Pathfinding-Algorithmen: BFS, Dijkstra und A* durchsuchen ein Raster in Echtzeit. Wände zeichnen, Start/Ziel verschieben.',
     algolab: 'Eine visuelle Bibliothek von Sortier- und Suchalgorithmen, mit echter Animation, Code und Big-O-Komplexität nebeneinander.',
+    gamenight: 'Ein Punktezähler für Spieleabende: Spiel erstellen, Spieler hinzufügen, Punkte Runde für Runde eintragen und die Endwertung per WhatsApp teilen. Alles wird direkt im Browser gespeichert.',
   },
 }
 

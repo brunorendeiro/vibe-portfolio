@@ -49,6 +49,7 @@ const projectGlyphs: Record<ProjectGlyph, ReactElement> = {
   weather: <><circle cx="7" cy="6" r="2.3" /><path d="M7 1.7v1.3M2.6 3.4l1 1M1.3 6h1.3" /><path d="M9 18h7.5a3.5 3.5 0 0 0 .5-6.96A5.5 5.5 0 0 0 7.2 9.6 4 4 0 0 0 9 18Z" /></>,
   route: <><circle cx="5" cy="19" r="2" /><circle cx="19" cy="5" r="2" /><path d="M6.5 17.5 11 12l2 2 4.5-5.5" /></>,
   bars: <path d="M5 20V10M12 20V4M19 20v14" />,
+  dice: <><rect x="4" y="4" width="16" height="16" rx="3" /><circle cx="8.5" cy="8.5" r="1.2" fill="currentColor" stroke="none" /><circle cx="15.5" cy="8.5" r="1.2" fill="currentColor" stroke="none" /><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none" /><circle cx="8.5" cy="15.5" r="1.2" fill="currentColor" stroke="none" /><circle cx="15.5" cy="15.5" r="1.2" fill="currentColor" stroke="none" /></>,
 }
 
 function ProjectGlyphIcon({ name, size = 30 }: { name: ProjectGlyph; size?: number }) {

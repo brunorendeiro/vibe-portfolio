@@ -349,7 +349,7 @@ export default function App() {
   return <div className="app-shell">
     <NavBar route={route} navigate={navigate} theme={theme} toggleTheme={toggleTheme} locale={locale} setLocale={setLocale} open={menuOpen} setOpen={setMenuOpen} />
     {route === '/' ? <Dashboard navigate={navigate} locale={locale} /> : <AppsPage locale={locale} />}
-    <footer><span>© {new Date().getFullYear()} Bruno Rendeiro</span><span>{t.footerTagline}</span></footer>
+    <footer><span>© {new Date().getFullYear()} Bruno Rendeiro</span><span>{t.footerTagline}</span><a href="/privacidade.html">Privacidade</a></footer>
     <CookieConsent locale={locale} />
   </div>
 }

@@ -1,7 +1,7 @@
 import type { CategoryKey, StatusKey } from '../i18n'
 
 // Glifo temático usado no cartão da app — ver `projectGlyphs` em App.tsx.
-export type ProjectGlyph = 'pulse' | 'compass' | 'map' | 'star' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice'
+export type ProjectGlyph = 'pulse' | 'compass' | 'map' | 'star' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice' | 'radar'
 
 export type Project = {
   id: string
@@ -145,5 +145,15 @@ export const projects: Project[] = [
     url: 'https://gamenight-two.vercel.app/',
     accent: '#ff4d94',
     icon: 'dice',
+  },
+  {
+    id: 'transitradius',
+    name: 'TransitRadius',
+    category: 'web',
+    status: 'available',
+    technologies: ['React', 'TypeScript', 'Vite', 'Geolocation API', 'Framer Motion', 'Public Transit API'],
+    url: 'https://transitradius.vercel.app/',
+    accent: '#5eead4',
+    icon: 'radar',
   },
 ]

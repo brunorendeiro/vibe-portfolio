@@ -50,6 +50,7 @@ const projectGlyphs: Record<ProjectGlyph, ReactElement> = {
   route: <><circle cx="5" cy="19" r="2" /><circle cx="19" cy="5" r="2" /><path d="M6.5 17.5 11 12l2 2 4.5-5.5" /></>,
   bars: <path d="M5 20V10M12 20V4M19 20v14" />,
   dice: <><rect x="4" y="4" width="16" height="16" rx="3" /><circle cx="8.5" cy="8.5" r="1.2" fill="currentColor" stroke="none" /><circle cx="15.5" cy="8.5" r="1.2" fill="currentColor" stroke="none" /><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none" /><circle cx="8.5" cy="15.5" r="1.2" fill="currentColor" stroke="none" /><circle cx="15.5" cy="15.5" r="1.2" fill="currentColor" stroke="none" /></>,
+  radar: <><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none" /><path d="M12 12 19 7" /></>,
 }
 
 function ProjectGlyphIcon({ name, size = 30 }: { name: ProjectGlyph; size?: number }) {

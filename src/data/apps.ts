@@ -1,7 +1,7 @@
 import type { CategoryKey, StatusKey } from '../i18n'
 
 // Glifo temático usado no cartão da app — ver `projectGlyphs` em App.tsx.
-export type ProjectGlyph = 'pulse' | 'compass' | 'map' | 'star' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice' | 'radar' | 'face'
+export type ProjectGlyph = 'pulse' | 'compass' | 'map' | 'star' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice' | 'radar' | 'face' | 'wand'
 
 export type Project = {
   id: string
@@ -165,5 +165,15 @@ export const projects: Project[] = [
     url: 'https://talktoon.vercel.app/',
     accent: '#f472b6',
     icon: 'face',
+  },
+  {
+    id: 'ai-prompt-optimizer',
+    name: 'AI Prompt Optimizer',
+    category: 'ai',
+    status: 'available',
+    technologies: ['Next.js 16', 'TypeScript', 'shadcn/ui', 'OpenRouter (multi-model)', 'Google OAuth', 'Vercel KV'],
+    url: 'https://ai-prompt-optimizer-nu.vercel.app/',
+    accent: '#facc15',
+    icon: 'wand',
   },
 ]

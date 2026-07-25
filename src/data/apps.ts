@@ -1,7 +1,7 @@
 import type { CategoryKey, StatusKey } from '../i18n'
 
 // Glifo temático usado no cartão da app — ver `projectGlyphs` em App.tsx.
-export type ProjectGlyph = 'pulse' | 'compass' | 'map' | 'star' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice' | 'radar' | 'face' | 'wand' | 'chat'
+export type ProjectGlyph = 'pulse' | 'compass' | 'map' | 'star' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice' | 'radar' | 'face' | 'wand' | 'chat' | 'vault'
 
 export type Project = {
   id: string
@@ -185,5 +185,15 @@ export const projects: Project[] = [
     url: 'https://grueezigo.vercel.app/',
     accent: '#ff3b3b',
     icon: 'chat',
+  },
+  {
+    id: 'casevault',
+    name: 'CaseVault',
+    category: 'web',
+    status: 'available',
+    technologies: ['Next.js 16', 'TypeScript', 'shadcn/ui', 'Google OAuth', 'Vercel KV'],
+    url: 'https://casevault-tau.vercel.app/',
+    accent: '#6366f1',
+    icon: 'vault',
   },
 ]

@@ -57,6 +57,7 @@ const projectGlyphs: Record<ProjectGlyph, ReactElement> = {
   radar: <><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none" /><path d="M12 12 19 7" /></>,
   face: <><circle cx="12" cy="12" r="9" /><circle cx="9" cy="10" r="1.1" fill="currentColor" stroke="none" /><circle cx="15" cy="10" r="1.1" fill="currentColor" stroke="none" /><path d="M8.5 15c1 1.2 2.2 1.8 3.5 1.8s2.5-.6 3.5-1.8" /></>,
   wand: <><path d="M5 19 16 8" /><path d="M18 3v3M21.5 6.5h-3M14 3l.8.8M11.5 5.5l.8.8" /></>,
+  chat: <><path d="M4 5h16v11H9l-4 4V5Z" /><path d="M8 9.5h8M8 12.5h5" /></>,
 }
 
 function ProjectGlyphIcon({ name, size = 30 }: { name: ProjectGlyph; size?: number }) {

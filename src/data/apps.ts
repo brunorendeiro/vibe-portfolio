@@ -1,7 +1,7 @@
 import type { CategoryKey, StatusKey } from '../i18n'
 
 // Glifo temático usado no cartão da app — ver `projectGlyphs` em App.tsx.
-export type ProjectGlyph = 'pulse' | 'compass' | 'map' | 'star' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice' | 'radar' | 'face' | 'wand'
+export type ProjectGlyph = 'pulse' | 'compass' | 'map' | 'star' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice' | 'radar' | 'face' | 'wand' | 'chat'
 
 export type Project = {
   id: string
@@ -175,5 +175,15 @@ export const projects: Project[] = [
     url: 'https://ai-prompt-optimizer-nu.vercel.app/',
     accent: '#facc15',
     icon: 'wand',
+  },
+  {
+    id: 'grueezigo',
+    name: 'GrüeziGo',
+    category: 'web',
+    status: 'available',
+    technologies: ['React', 'TypeScript', 'Vite', 'Web Speech API', 'i18n (PT/EN/DE)', 'Local Storage'],
+    url: 'https://grueezigo.vercel.app/',
+    accent: '#ff3b3b',
+    icon: 'chat',
   },
 ]

@@ -124,3 +124,18 @@ Antes de considerar uma alteração terminada:
 2. Executar `npm run check`.
 3. Executar `npm run build`.
 4. Atualizar este README se a funcionalidade, arquitetura ou próximos passos tiverem mudado.
+
+## Nota técnica — Google Analytics
+
+O Analytics só é carregado depois de o utilizador aceitar os cookies. A função
+`gtag` deve enviar o objeto nativo `arguments` para `dataLayer`:
+
+```js
+function gtag() {
+  dataLayer.push(arguments)
+}
+```
+
+Não substituir por `dataLayer.push(args)` com um rest parameter (`...args`):
+apesar de o script da Google carregar, o comando `config` e o `page_view` podem
+não ser processados.

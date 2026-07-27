@@ -60,6 +60,7 @@ const projectGlyphs: Record<ProjectGlyph, ReactElement> = {
   wand: <><path d="M5 19 16 8" /><path d="M18 3v3M21.5 6.5h-3M14 3l.8.8M11.5 5.5l.8.8" /></>,
   chat: <><path d="M4 5h16v11H9l-4 4V5Z" /><path d="M8 9.5h8M8 12.5h5" /></>,
   vault: <><rect x="5" y="11" width="14" height="9" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /><circle cx="12" cy="15.5" r="1.3" fill="currentColor" stroke="none" /></>,
+  exchange: <><path d="M4 8h13M13 4l4 4-4 4" /><path d="M20 16H7M11 12l-4 4 4 4" /></>,
 }
 
 function ProjectGlyphIcon({ name, size = 30 }: { name: ProjectGlyph; size?: number }) {

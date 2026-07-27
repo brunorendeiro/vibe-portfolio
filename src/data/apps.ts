@@ -1,7 +1,7 @@
 import type { CategoryKey, StatusKey } from '../i18n'
 
 // Glifo temático usado no cartão da app — ver `projectGlyphs` em App.tsx.
-export type ProjectGlyph = 'pulse' | 'compass' | 'map' | 'star' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice' | 'radar' | 'face' | 'wand' | 'chat' | 'vault'
+export type ProjectGlyph = 'pulse' | 'compass' | 'map' | 'star' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice' | 'radar' | 'face' | 'wand' | 'chat' | 'vault' | 'exchange'
 
 export type Project = {
   id: string
@@ -195,5 +195,15 @@ export const projects: Project[] = [
     url: 'https://casevault-tau.vercel.app/',
     accent: '#6366f1',
     icon: 'vault',
+  },
+  {
+    id: 'swissrate',
+    name: 'SwissRate',
+    category: 'mobile',
+    status: 'available',
+    technologies: ['React', 'TypeScript', 'Vite', 'PWA', 'Frankfurter API', 'i18n (PT/EN/DE)'],
+    url: 'https://swissrate.vercel.app/',
+    accent: '#e8112d',
+    icon: 'exchange',
   },
 ]

@@ -1,7 +1,7 @@
 import type { CategoryKey, StatusKey } from '../i18n'
 
 // Glifo temático usado no cartão da app — ver `projectGlyphs` em App.tsx.
-export type ProjectGlyph = 'pulse' | 'compass' | 'map' | 'star' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice' | 'radar' | 'face' | 'wand' | 'chat' | 'vault' | 'exchange'
+export type ProjectGlyph = 'wine' | 'pulse' | 'compass' | 'map' | 'star' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice' | 'radar' | 'face' | 'wand' | 'chat' | 'vault' | 'exchange'
 
 export type Project = {
   id: string
@@ -18,6 +18,16 @@ export type Project = {
 // As descrições de cada app vivem em data/projectText.ts (traduzidas). Este é o
 // único ficheiro que precisas de alterar para adicionar, remover ou reordenar apps.
 export const projects: Project[] = [
+  {
+    id: 'wine-atlas',
+    name: 'Wine Atlas',
+    category: 'mobile',
+    status: 'building',
+    technologies: ['React', 'TypeScript', 'Vite', 'Geolocation API', 'i18n (PT/EN/DE)', 'Local Storage'],
+    url: 'https://wine-atlas-eta.vercel.app/',
+    accent: '#8f294b',
+    icon: 'wine',
+  },
   {
     id: 'vibecheck',
     name: 'VibeCheck',

@@ -22,7 +22,7 @@ export const projects: Project[] = [
     id: 'wine-atlas',
     name: 'Wine Atlas',
     category: 'mobile',
-    status: 'building',
+    status: 'available',
     technologies: ['React', 'TypeScript', 'Vite', 'Geolocation API', 'i18n (PT/EN/DE)', 'Local Storage'],
     url: 'https://wine-atlas-eta.vercel.app/',
     accent: '#8f294b',

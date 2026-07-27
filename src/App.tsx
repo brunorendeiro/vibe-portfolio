@@ -33,6 +33,7 @@ const icons = {
   test: <><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 5-5"/></>,
   course: <><path d="M4 6a2 2 0 0 1 2-2h6v16H6a2 2 0 0 1-2-2V6Z"/><path d="M20 6a2 2 0 0 0-2-2h-6v16h6a2 2 0 0 0 2-2V6Z"/></>,
   toolbox: <><path d="M4 10h16v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-9Z"/><path d="M8 10V7a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3"/><path d="M4 14h16"/></>,
+  favorite: <path d="m12 3 2.7 6.6L21 11l-5 4.3 1.4 6.7L12 18.6 6.6 22l1.4-6.7L3 11l6.3-1.4L12 3Z"/>,
 }
 
 function Icon({ name, size = 20 }: { name: keyof typeof icons; size?: number }) {
@@ -112,6 +113,29 @@ function useLocale() {
   return { locale, setLocale }
 }
 
+const favoritesKey = 'vibe-portfolio-favorites'
+
+function useFavorites() {
+  const [favorites, setFavorites] = useState<string[]>(() => {
+    try {
+      const stored = window.localStorage.getItem(favoritesKey)
+      return stored ? JSON.parse(stored) : []
+    } catch {
+      return []
+    }
+  })
+
+  useEffect(() => {
+    window.localStorage.setItem(favoritesKey, JSON.stringify(favorites))
+  }, [favorites])
+
+  const toggleFavorite = (id: string) => {
+    setFavorites(current => current.includes(id) ? current.filter(item => item !== id) : [...current, id])
+  }
+
+  return { favorites, toggleFavorite }
+}
+
 function NavBar({ route, navigate, theme, toggleTheme, locale, setLocale, open, setOpen }: {
   route: Route
   navigate: (route: Route) => void
@@ -178,10 +202,26 @@ function Ticker() {
   </div>
 }
 
-function ProjectCard({ project, locale }: { project: Project; locale: Locale }) {
+function FavoriteButton({ active, onToggle, locale }: { active: boolean; onToggle: () => void; locale: Locale }) {
+  const t = ui[locale]
+  return <button
+    type="button"
+    className={`favorite-toggle ${active ? 'active' : ''}`}
+    onClick={onToggle}
+    aria-pressed={active}
+    aria-label={active ? t.favoriteRemove : t.favoriteAdd}
+  >
+    <svg width="18" height="18" viewBox="0 0 24 24" fill={active ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="m12 3 2.7 6.6L21 11l-5 4.3 1.4 6.7L12 18.6 6.6 22l1.4-6.7L3 11l6.3-1.4L12 3Z" />
+    </svg>
+  </button>
+}
+
+function ProjectCard({ project, locale, isFavorite, onToggleFavorite }: { project: Project; locale: Locale; isFavorite: boolean; onToggleFavorite: () => void }) {
   const t = ui[locale]
   return <article className="project-card">
     <div className="project-visual" style={{ '--accent-raw': project.accent } as React.CSSProperties}>
+      <FavoriteButton active={isFavorite} onToggle={onToggleFavorite} locale={locale} />
       <span className="project-icon"><ProjectGlyphIcon name={project.icon} /></span>
       <span className={`status ${project.status}`}><i />{statusLabels[locale][project.status]}</span>
     </div>
@@ -198,9 +238,10 @@ function ProjectCard({ project, locale }: { project: Project; locale: Locale }) 
   </article>
 }
 
-function Dashboard({ navigate, locale }: { navigate: (route: Route) => void; locale: Locale }) {
+function Dashboard({ navigate, locale, favorites, toggleFavorite }: { navigate: (route: Route) => void; locale: Locale; favorites: string[]; toggleFavorite: (id: string) => void }) {
   const t = ui[locale]
   const activeProjects = projects.filter(project => project.status !== 'idea').length
+  const featured = useMemo(() => [...projects].sort((a, b) => Number(favorites.includes(b.id)) - Number(favorites.includes(a.id))).slice(0, 2), [favorites])
   return <main className="page dashboard-page">
     <section className="hero">
       <div className="hero-copy">
@@ -233,7 +274,7 @@ function Dashboard({ navigate, locale }: { navigate: (route: Route) => void; loc
 
     <section className="section-block">
       <div className="section-heading"><div><span>{t.recentWorkKicker}</span><h2>{t.recentWorkTitle}</h2></div><button onClick={() => navigate('/apps')}>{t.viewAll} <Icon name="arrow" size={18} /></button></div>
-      <div className="project-grid dashboard-grid">{projects.slice(0, 2).map(project => <ProjectCard project={project} locale={locale} key={project.id} />)}</div>
+      <div className="project-grid dashboard-grid">{featured.map(project => <ProjectCard project={project} locale={locale} key={project.id} isFavorite={favorites.includes(project.id)} onToggleFavorite={() => toggleFavorite(project.id)} />)}</div>
     </section>
 
     <section className="process-section">
@@ -305,12 +346,15 @@ function Dashboard({ navigate, locale }: { navigate: (route: Route) => void; loc
   </main>
 }
 
-function AppsPage({ locale }: { locale: Locale }) {
+function AppsPage({ locale, favorites, toggleFavorite }: { locale: Locale; favorites: string[]; toggleFavorite: (id: string) => void }) {
   const t = ui[locale]
   const [filter, setFilter] = useState<Filter>('all')
   const filters: Filter[] = ['all', 'web', 'mobile', 'ai']
   const filterLabel = (item: Filter) => item === 'all' ? t.filterAll : categoryLabels[locale][item]
-  const visible = useMemo(() => filter === 'all' ? projects : projects.filter(project => project.category === filter), [filter])
+  const visible = useMemo(() => {
+    const filtered = filter === 'all' ? projects : projects.filter(project => project.category === filter)
+    return [...filtered].sort((a, b) => Number(favorites.includes(b.id)) - Number(favorites.includes(a.id)))
+  }, [filter, favorites])
   return <main className="page apps-page">
     <section className="page-intro">
       <span className="section-kicker">{t.appsKicker}</span>
@@ -322,7 +366,7 @@ function AppsPage({ locale }: { locale: Locale }) {
       <span>{visible.length} {visible.length === 1 ? t.projectCountOne : t.projectCountMany}</span>
     </div>
     {visible.length > 0
-      ? <section className="project-grid apps-grid">{visible.map(project => <ProjectCard project={project} locale={locale} key={project.id} />)}</section>
+      ? <section className="project-grid apps-grid">{visible.map(project => <ProjectCard project={project} locale={locale} key={project.id} isFavorite={favorites.includes(project.id)} onToggleFavorite={() => toggleFavorite(project.id)} />)}</section>
       : <section className="empty-state"><span>✦</span><h2>{t.emptyTitle}</h2><p>{t.emptyBody}</p></section>}
   </main>
 }
@@ -331,6 +375,7 @@ export default function App() {
   const { route, navigate } = useRoute()
   const { theme, toggleTheme } = useTheme()
   const { locale, setLocale } = useLocale()
+  const { favorites, toggleFavorite } = useFavorites()
   const [menuOpen, setMenuOpen] = useState(false)
   const t = ui[locale]
 
@@ -351,7 +396,7 @@ export default function App() {
 
   return <div className="app-shell">
     <NavBar route={route} navigate={navigate} theme={theme} toggleTheme={toggleTheme} locale={locale} setLocale={setLocale} open={menuOpen} setOpen={setMenuOpen} />
-    {route === '/' ? <Dashboard navigate={navigate} locale={locale} /> : <AppsPage locale={locale} />}
+    {route === '/' ? <Dashboard navigate={navigate} locale={locale} favorites={favorites} toggleFavorite={toggleFavorite} /> : <AppsPage locale={locale} favorites={favorites} toggleFavorite={toggleFavorite} />}
     <footer><span>© {new Date().getFullYear()} Bruno Rendeiro</span><span>{t.footerTagline}</span><a href="/privacidade.html">Privacidade</a></footer>
     <CookieConsent locale={locale} />
   </div>

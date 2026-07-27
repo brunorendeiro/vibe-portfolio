@@ -81,6 +81,8 @@ type UiStrings = {
   openApp: string
   linkSoon: string
   sourceLabel: string
+  favoriteAdd: string
+  favoriteRemove: string
   footerTagline: string
   resourcesKicker: string
   resourcesTitle: string
@@ -159,6 +161,8 @@ export const ui: Record<Locale, UiStrings> = {
     openApp: 'Abrir app',
     linkSoon: 'Link em breve',
     sourceLabel: 'Código de',
+    favoriteAdd: 'Marcar como favorita',
+    favoriteRemove: 'Remover dos favoritos',
     footerTagline: 'Imaginado por um humano. Construído com IA.',
     resourcesKicker: 'Recursos',
     resourcesTitle: 'A acompanhar o ecossistema de IA',
@@ -235,6 +239,8 @@ export const ui: Record<Locale, UiStrings> = {
     openApp: 'Open app',
     linkSoon: 'Link coming soon',
     sourceLabel: 'Source code for',
+    favoriteAdd: 'Mark as favorite',
+    favoriteRemove: 'Remove from favorites',
     footerTagline: 'Imagined by a human. Built with AI.',
     resourcesKicker: 'Resources',
     resourcesTitle: 'Keeping up with the AI ecosystem',
@@ -311,6 +317,8 @@ export const ui: Record<Locale, UiStrings> = {
     openApp: 'App öffnen',
     linkSoon: 'Link folgt bald',
     sourceLabel: 'Quellcode von',
+    favoriteAdd: 'Als Favorit markieren',
+    favoriteRemove: 'Aus Favoriten entfernen',
     footerTagline: 'Von einem Menschen erdacht. Mit KI gebaut.',
     resourcesKicker: 'Ressourcen',
     resourcesTitle: 'Am Puls des KI-Ökosystems',

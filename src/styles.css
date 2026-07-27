@@ -141,6 +141,9 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .status.available i { background: #52c774; }
 .status.building i { background: var(--accent-2); }
 .status.idea i { background: var(--accent); }
+.favorite-toggle { position: absolute; left: 14px; top: 14px; display: grid; place-items: center; width: 32px; height: 32px; border: 2px solid var(--text); border-radius: 50%; background: var(--panel); color: var(--text); cursor: pointer; transition: transform .15s ease, color .15s ease, background .15s ease; }
+.favorite-toggle:hover { transform: scale(1.08); }
+.favorite-toggle.active { background: #ffd84d; color: #17140f; }
 .project-body { padding: 22px; }
 .project-category { color: var(--muted); font: 700 10px 'Space Mono', monospace; letter-spacing: .1em; text-transform: uppercase; }
 .project-body h3 { margin: 8px 0 9px; font: 600 21px 'Fraunces', serif; letter-spacing: -.01em; }

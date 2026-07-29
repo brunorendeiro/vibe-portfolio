@@ -34,6 +34,7 @@ const icons = {
   course: <><path d="M4 6a2 2 0 0 1 2-2h6v16H6a2 2 0 0 1-2-2V6Z"/><path d="M20 6a2 2 0 0 0-2-2h-6v16h6a2 2 0 0 0 2-2V6Z"/></>,
   toolbox: <><path d="M4 10h16v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-9Z"/><path d="M8 10V7a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3"/><path d="M4 14h16"/></>,
   favorite: <path d="m12 3 2.7 6.6L21 11l-5 4.3 1.4 6.7L12 18.6 6.6 22l1.4-6.7L3 11l6.3-1.4L12 3Z"/>,
+  search: <><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></>,
 }
 
 function Icon({ name, size = 20 }: { name: keyof typeof icons; size?: number }) {
@@ -220,9 +221,9 @@ function FavoriteButton({ active, onToggle, locale }: { active: boolean; onToggl
   </button>
 }
 
-function ProjectCard({ project, locale, isFavorite, onToggleFavorite }: { project: Project; locale: Locale; isFavorite: boolean; onToggleFavorite: () => void }) {
+function ProjectCard({ project, locale, isFavorite, onToggleFavorite, anchorId }: { project: Project; locale: Locale; isFavorite: boolean; onToggleFavorite: () => void; anchorId?: string }) {
   const t = ui[locale]
-  return <article className="project-card">
+  return <article className="project-card" id={anchorId} tabIndex={anchorId ? -1 : undefined}>
     <div className="project-visual" style={{ '--accent-raw': project.accent } as React.CSSProperties}>
       <FavoriteButton active={isFavorite} onToggle={onToggleFavorite} locale={locale} />
       <span className="project-icon"><ProjectGlyphIcon name={project.icon} /></span>
@@ -352,25 +353,104 @@ function Dashboard({ navigate, locale, favorites, toggleFavorite }: { navigate: 
 function AppsPage({ locale, favorites, toggleFavorite }: { locale: Locale; favorites: string[]; toggleFavorite: (id: string) => void }) {
   const t = ui[locale]
   const [filter, setFilter] = useState<Filter>('all')
+  const [query, setQuery] = useState('')
   const filters: Filter[] = ['all', 'web', 'mobile', 'ai']
   const filterLabel = (item: Filter) => item === 'all' ? t.filterAll : categoryLabels[locale][item]
+  const normalizedQuery = query.trim().toLocaleLowerCase(locale).normalize('NFD').replace(/[\u0300-\u036f]/g, '')
   const visible = useMemo(() => {
     const filtered = filter === 'all' ? projects : projects.filter(project => project.category === filter)
-    return [...filtered].sort((a, b) => Number(favorites.includes(b.id)) - Number(favorites.includes(a.id)))
-  }, [filter, favorites])
+    const searched = normalizedQuery
+      ? filtered.filter(project => {
+          const searchText = [
+            project.name,
+            getProjectDescription(project.id, locale),
+            ...project.technologies,
+            categoryLabels[locale][project.category],
+            statusLabels[locale][project.status],
+          ].join(' ').toLocaleLowerCase(locale).normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+          return searchText.includes(normalizedQuery)
+        })
+      : filtered
+    return [...searched].sort((a, b) => Number(favorites.includes(b.id)) - Number(favorites.includes(a.id)))
+  }, [filter, favorites, locale, normalizedQuery])
+
+  const goToProject = (projectId: string) => {
+    const card = document.getElementById(`project-${projectId}`)
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    card?.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' })
+    card?.focus({ preventScroll: true })
+  }
+
   return <main className="page apps-page">
     <section className="page-intro">
       <span className="section-kicker">{t.appsKicker}</span>
       <h1>{t.appsTitleLead}<span>.</span></h1>
       <p>{t.appsIntro}</p>
     </section>
-    <div className="filter-row" role="group" aria-label={t.appsKicker}>
-      {filters.map(item => <button key={item} className={filter === item ? 'active' : ''} aria-pressed={filter === item} onClick={() => setFilter(item)}>{filterLabel(item)}</button>)}
-      <span>{visible.length} {visible.length === 1 ? t.projectCountOne : t.projectCountMany}</span>
-    </div>
+
+    <section className="project-finder" aria-labelledby="project-finder-title">
+      <div className="finder-heading">
+        <div>
+          <span className="section-kicker">{t.finderKicker}</span>
+          <h2 id="project-finder-title">{t.finderTitle}</h2>
+        </div>
+        <p>{t.finderBody}</p>
+      </div>
+
+      <div className="search-field">
+        <Icon name="search" size={21} />
+        <label className="sr-only" htmlFor="project-search">{t.searchLabel}</label>
+        <input
+          id="project-search"
+          type="search"
+          value={query}
+          onChange={event => setQuery(event.target.value)}
+          placeholder={t.searchPlaceholder}
+          autoComplete="off"
+        />
+        {query && <button type="button" onClick={() => setQuery('')} aria-label={t.searchClear}><Icon name="close" size={17} /></button>}
+      </div>
+
+      <div className="filter-row" role="group" aria-label={t.filterLabel}>
+        {filters.map(item => <button key={item} className={filter === item ? 'active' : ''} aria-pressed={filter === item} onClick={() => setFilter(item)}>{filterLabel(item)}</button>)}
+        <span aria-live="polite">{visible.length} {visible.length === 1 ? t.projectCountOne : t.projectCountMany}</span>
+      </div>
+
+      {visible.length > 0 && <>
+        <div className="directory-heading">
+          <h3>{t.directoryTitle}</h3>
+          <p>{t.directoryBody}</p>
+        </div>
+        <div className="project-directory">
+          {visible.map(project => (
+            <button type="button" className="directory-item" key={project.id} onClick={() => goToProject(project.id)}>
+              <span className="directory-icon" style={{ '--directory-accent': project.accent } as React.CSSProperties}><ProjectGlyphIcon name={project.icon} size={23} /></span>
+              <span className="directory-copy">
+                <span className="directory-meta">{categoryLabels[locale][project.category]} · {statusLabels[locale][project.status]}</span>
+                <strong>{project.name}</strong>
+                <span>{getProjectDescription(project.id, locale)}</span>
+              </span>
+              <span className="directory-arrow" aria-hidden="true"><Icon name="arrow" size={17} /></span>
+            </button>
+          ))}
+        </div>
+      </>}
+    </section>
+
     {visible.length > 0
-      ? <section className="project-grid apps-grid">{visible.map(project => <ProjectCard project={project} locale={locale} key={project.id} isFavorite={favorites.includes(project.id)} onToggleFavorite={() => toggleFavorite(project.id)} />)}</section>
-      : <section className="empty-state"><span>✦</span><h2>{t.emptyTitle}</h2><p>{t.emptyBody}</p></section>}
+      ? <section className="project-details" aria-labelledby="project-details-title">
+          <div className="details-heading">
+            <span className="section-kicker">{t.detailsKicker}</span>
+            <h2 id="project-details-title">{t.detailsTitle}</h2>
+          </div>
+          <div className="project-grid apps-grid">{visible.map(project => <ProjectCard project={project} locale={locale} key={project.id} isFavorite={favorites.includes(project.id)} onToggleFavorite={() => toggleFavorite(project.id)} anchorId={`project-${project.id}`} />)}</div>
+        </section>
+      : <section className="empty-state">
+          <span>✦</span>
+          <h2>{query ? t.noResultsTitle : t.emptyTitle}</h2>
+          <p>{query ? t.noResultsBody : t.emptyBody}</p>
+          {query && <button type="button" onClick={() => { setQuery(''); setFilter('all') }}>{t.clearFilters}</button>}
+        </section>}
   </main>
 }
 

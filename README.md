@@ -17,6 +17,8 @@ Esta é a primeira versão funcional e contém:
 - Secção de projetos em destaque
 - Explicação resumida do processo: imaginar, construir e aprender
 - Página independente com a lista de todas as apps
+- Pesquisa por nome, finalidade, tecnologia, categoria ou estado
+- Diretório compacto para perceber rapidamente o que cada app faz e saltar para os detalhes
 - Filtros por Web, Mobile e IA
 - Estados de projeto: disponível, em construção e ideia
 - Navegação lateral em desktop e menu adaptado a telemóvel

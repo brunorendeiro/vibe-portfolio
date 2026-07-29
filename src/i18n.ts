@@ -73,6 +73,20 @@ type UiStrings = {
   appsKicker: string
   appsTitleLead: string
   appsIntro: string
+  finderKicker: string
+  finderTitle: string
+  finderBody: string
+  searchLabel: string
+  searchPlaceholder: string
+  searchClear: string
+  filterLabel: string
+  directoryTitle: string
+  directoryBody: string
+  detailsKicker: string
+  detailsTitle: string
+  noResultsTitle: string
+  noResultsBody: string
+  clearFilters: string
   filterAll: string
   projectCountOne: string
   projectCountMany: string
@@ -152,7 +166,21 @@ export const ui: Record<Locale, UiStrings> = {
     processStep3Body: 'Testar, ouvir e melhorar uma versão de cada vez.',
     appsKicker: 'Projetos independentes',
     appsTitleLead: 'As minhas apps',
-    appsIntro: 'Cada projeto começou com uma pergunta, cresceu com experimentação e vive no seu próprio espaço.',
+    appsIntro: 'Explora aplicações para aprender, trabalhar, jogar e resolver pequenos problemas do dia a dia. Cada projeto explica claramente para quem serve e o que permite fazer.',
+    finderKicker: 'Explorar o portefólio',
+    finderTitle: 'Encontra a app certa para ti',
+    finderBody: 'Pesquisa por um tema, uma necessidade ou uma tecnologia. Também podes escolher diretamente na lista e saltar para todos os detalhes.',
+    searchLabel: 'Pesquisar projetos',
+    searchPlaceholder: 'Ex.: aprender alemão, vinhos, IA…',
+    searchClear: 'Limpar pesquisa',
+    filterLabel: 'Filtrar projetos por categoria',
+    directoryTitle: 'Escolhe uma app',
+    directoryBody: 'Uma visão rápida de tudo o que existe. Seleciona um projeto para conhecer a história, as funcionalidades e as tecnologias.',
+    detailsKicker: 'Todos os detalhes',
+    detailsTitle: 'Conhece cada projeto',
+    noResultsTitle: 'Não encontrei nenhum projeto',
+    noResultsBody: 'Experimenta outra palavra ou volta a ver todas as categorias.',
+    clearFilters: 'Limpar pesquisa e filtros',
     filterAll: 'Todas',
     projectCountOne: 'projeto',
     projectCountMany: 'projetos',
@@ -230,7 +258,21 @@ export const ui: Record<Locale, UiStrings> = {
     processStep3Body: 'Test, listen, and improve one version at a time.',
     appsKicker: 'Independent projects',
     appsTitleLead: 'My apps',
-    appsIntro: 'Every project started with a question, grew through experimentation, and lives in its own space.',
+    appsIntro: 'Explore apps for learning, working, playing, and solving small everyday problems. Each project clearly explains who it is for and what it helps you do.',
+    finderKicker: 'Explore the portfolio',
+    finderTitle: 'Find the right app for you',
+    finderBody: 'Search by topic, need, or technology. You can also pick directly from the list and jump to the full details.',
+    searchLabel: 'Search projects',
+    searchPlaceholder: 'E.g. learn German, wine, AI…',
+    searchClear: 'Clear search',
+    filterLabel: 'Filter projects by category',
+    directoryTitle: 'Choose an app',
+    directoryBody: 'A quick view of everything available. Select a project to learn about its story, features, and technologies.',
+    detailsKicker: 'All the details',
+    detailsTitle: 'Get to know each project',
+    noResultsTitle: 'No projects found',
+    noResultsBody: 'Try another search or browse all categories again.',
+    clearFilters: 'Clear search and filters',
     filterAll: 'All',
     projectCountOne: 'project',
     projectCountMany: 'projects',
@@ -308,7 +350,21 @@ export const ui: Record<Locale, UiStrings> = {
     processStep3Body: 'Testen, zuhören und Version für Version verbessern.',
     appsKicker: 'Unabhängige Projekte',
     appsTitleLead: 'Meine Apps',
-    appsIntro: 'Jedes Projekt begann mit einer Frage, wuchs durch Ausprobieren und lebt in seinem eigenen Raum.',
+    appsIntro: 'Entdecke Apps zum Lernen, Arbeiten, Spielen und Lösen kleiner Alltagsprobleme. Jedes Projekt erklärt klar, für wen es gedacht ist und was du damit tun kannst.',
+    finderKicker: 'Portfolio entdecken',
+    finderTitle: 'Finde die passende App für dich',
+    finderBody: 'Suche nach Thema, Bedürfnis oder Technologie. Du kannst auch direkt aus der Liste wählen und zu allen Details springen.',
+    searchLabel: 'Projekte durchsuchen',
+    searchPlaceholder: 'Z. B. Deutsch lernen, Wein, KI…',
+    searchClear: 'Suche löschen',
+    filterLabel: 'Projekte nach Kategorie filtern',
+    directoryTitle: 'Wähle eine App',
+    directoryBody: 'Ein schneller Überblick über alle Projekte. Wähle eines aus, um Geschichte, Funktionen und Technologien kennenzulernen.',
+    detailsKicker: 'Alle Details',
+    detailsTitle: 'Lerne jedes Projekt kennen',
+    noResultsTitle: 'Keine Projekte gefunden',
+    noResultsBody: 'Versuche einen anderen Suchbegriff oder zeige wieder alle Kategorien an.',
+    clearFilters: 'Suche und Filter löschen',
     filterAll: 'Alle',
     projectCountOne: 'Projekt',
     projectCountMany: 'Projekte',

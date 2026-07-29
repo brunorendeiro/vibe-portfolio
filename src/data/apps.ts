@@ -23,7 +23,7 @@ export const projects: Project[] = [
     name: 'Team HQ',
     category: 'ai',
     status: 'available',
-    technologies: ['Lovable', 'AI-assisted development', 'React', 'TypeScript', 'Google OAuth', 'Inventory workflows', 'Google Analytics'],
+    technologies: ['Lovable', 'Flowise', 'AI agent integration', 'React', 'TypeScript', 'Google OAuth', 'Inventory workflows', 'Google Analytics'],
     url: 'https://athlete-closet-pal.lovable.app/',
     accent: '#b9f719',
     icon: 'team',

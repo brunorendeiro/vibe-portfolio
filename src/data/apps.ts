@@ -1,7 +1,7 @@
 import type { CategoryKey, StatusKey } from '../i18n'
 
 // Glifo temático usado no cartão da app — ver `projectGlyphs` em App.tsx.
-export type ProjectGlyph = 'team' | 'wine' | 'pulse' | 'compass' | 'map' | 'star' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice' | 'radar' | 'face' | 'wand' | 'chat' | 'vault' | 'exchange' | 'snake' | 'stopwatch'
+export type ProjectGlyph = 'team' | 'wine' | 'pulse' | 'map' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice' | 'radar' | 'face' | 'wand' | 'chat' | 'vault' | 'exchange' | 'snake' | 'stopwatch'
 
 export type Project = {
   id: string
@@ -49,15 +49,6 @@ export const projects: Project[] = [
     icon: 'pulse',
   },
   {
-    id: 'career-pilot',
-    name: 'CareerPilot AI',
-    category: 'ai',
-    status: 'building',
-    technologies: ['Flutter', 'Supabase', 'OpenAI'],
-    accent: '#a8ff78',
-    icon: 'compass',
-  },
-  {
     id: 'sidequest',
     name: 'SideQuest',
     category: 'web',
@@ -66,15 +57,6 @@ export const projects: Project[] = [
     url: 'https://sidequest-puce-iota.vercel.app/',
     accent: '#ff6a45',
     icon: 'map',
-  },
-  {
-    id: 'star-coach',
-    name: 'STAR Coach',
-    category: 'web',
-    status: 'idea',
-    technologies: ['React', 'TypeScript', 'Local storage'],
-    accent: '#8ca7ff',
-    icon: 'star',
   },
   {
     id: 'agentic-ai-spec-simulator',

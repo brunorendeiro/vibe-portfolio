@@ -1,7 +1,7 @@
 import type { CategoryKey, StatusKey } from '../i18n'
 
 // Glifo temático usado no cartão da app — ver `projectGlyphs` em App.tsx.
-export type ProjectGlyph = 'team' | 'wine' | 'pulse' | 'compass' | 'map' | 'star' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice' | 'radar' | 'face' | 'wand' | 'chat' | 'vault' | 'exchange' | 'snake'
+export type ProjectGlyph = 'team' | 'wine' | 'pulse' | 'compass' | 'map' | 'star' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice' | 'radar' | 'face' | 'wand' | 'chat' | 'vault' | 'exchange' | 'snake' | 'stopwatch'
 
 export type Project = {
   id: string
@@ -235,5 +235,15 @@ export const projects: Project[] = [
     url: 'https://nokia-snake-vert.vercel.app/',
     accent: '#8fae5d',
     icon: 'snake',
+  },
+  {
+    id: 'tabatabeat',
+    name: 'TabataBeat',
+    category: 'mobile',
+    status: 'available',
+    technologies: ['React', 'TypeScript', 'Vite', 'PWA', 'Web Audio API', 'Web Speech API', 'i18n (PT/EN/DE)'],
+    url: 'https://tabatabeat.vercel.app/',
+    accent: '#ff5a36',
+    icon: 'stopwatch',
   },
 ]

@@ -89,6 +89,17 @@ export const projects: Project[] = [
     icon: 'scan',
   },
   {
+    id: 'vibe-redflags',
+    name: 'VibeRedFlags',
+    category: 'web',
+    status: 'building',
+    technologies: ['Python', 'FastAPI', 'Authlib', 'Google OAuth', 'GitHub REST API', 'Security Hardening'],
+    url: 'https://vibe-redflags.onrender.com/',
+    repository: 'https://github.com/brunorendeiro/vibe-redflags',
+    accent: '#dc2626',
+    icon: 'scan',
+  },
+  {
     id: 'bugsweeper',
     name: 'BugSweeper',
     category: 'web',

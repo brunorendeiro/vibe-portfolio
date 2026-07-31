@@ -64,6 +64,7 @@ const projectGlyphs: Record<ProjectGlyph, ReactElement> = {
   exchange: <><path d="M4 8h13M13 4l4 4-4 4" /><path d="M20 16H7M11 12l-4 4 4 4" /></>,
   snake: <><path d="M5 7h6a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h6" /><circle cx="19" cy="7" r="1.3" fill="currentColor" stroke="none" /></>,
   stopwatch: <><circle cx="12" cy="13" r="8" /><path d="M12 13V9" /><path d="M9.5 3h5M12 3v2" /><path d="m18 6.5 1.3-1.3" /></>,
+  tokens: <><rect x="2" y="9" width="5" height="6" rx="1.5" /><rect x="8.5" y="9" width="3" height="6" rx="1.5" /><rect x="13" y="9" width="6" height="6" rx="1.5" /><rect x="20.5" y="9" width="1.5" height="6" rx="0.75" /></>,
 }
 
 function ProjectGlyphIcon({ name, size = 30 }: { name: ProjectGlyph; size?: number }) {

@@ -1,7 +1,7 @@
 import type { CategoryKey, StatusKey } from '../i18n'
 
 // Glifo temático usado no cartão da app — ver `projectGlyphs` em App.tsx.
-export type ProjectGlyph = 'team' | 'wine' | 'pulse' | 'map' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice' | 'radar' | 'face' | 'wand' | 'chat' | 'vault' | 'exchange' | 'snake' | 'stopwatch'
+export type ProjectGlyph = 'team' | 'wine' | 'pulse' | 'map' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice' | 'radar' | 'face' | 'wand' | 'chat' | 'vault' | 'exchange' | 'snake' | 'stopwatch' | 'tokens'
 
 export type Project = {
   id: string
@@ -238,5 +238,16 @@ export const projects: Project[] = [
     url: 'https://tabatabeat.vercel.app/',
     accent: '#ff5a36',
     icon: 'stopwatch',
+  },
+  {
+    id: 'universal-tokenizer',
+    name: 'Universal Tokenizer',
+    category: 'ai',
+    status: 'available',
+    technologies: ['Next.js 16', 'TypeScript', 'shadcn/ui', 'Web Workers', 'tiktoken', 'Hugging Face Tokenizers', 'i18n (PT/EN/DE)', 'Google Analytics'],
+    url: 'https://universal-tokenizer.vercel.app/',
+    repository: 'https://github.com/brunorendeiro/universal-tokenizer',
+    accent: '#10b981',
+    icon: 'tokens',
   },
 ]

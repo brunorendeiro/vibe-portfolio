@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState, type ReactElement } from 'react'
 import { projects, type Project, type ProjectGlyph } from './data/apps'
+import { caseStudyText, featuredCaseStudyIds, type FeaturedCaseStudyId } from './data/caseStudies'
 import { getProjectDescription } from './data/projectText'
 import { categoryLabels, detectLocale, locales, statusLabels, ui, type CategoryKey, type Locale } from './i18n'
 import { getStoredConsent, loadAnalytics } from './analytics'
@@ -243,10 +244,56 @@ function ProjectCard({ project, locale, isFavorite, onToggleFavorite, anchorId }
   </article>
 }
 
-function Dashboard({ navigate, locale, favorites, toggleFavorite }: { navigate: (route: Route) => void; locale: Locale; favorites: string[]; toggleFavorite: (id: string) => void }) {
+function CaseStudyCard({ projectId, locale, index }: { projectId: FeaturedCaseStudyId; locale: Locale; index: number }) {
   const t = ui[locale]
-  const activeProjects = projects.filter(project => project.status !== 'idea').length
-  const featured = useMemo(() => [...projects].sort((a, b) => Number(favorites.includes(b.id)) - Number(favorites.includes(a.id))).slice(0, 2), [favorites])
+  const project = projects.find(item => item.id === projectId)
+  const study = caseStudyText[locale][projectId]
+
+  if (!project) return null
+
+  const details = [
+    [t.caseStudyRole, study.role],
+    [t.caseStudyArchitecture, study.architecture],
+    [t.caseStudyEngineering, study.engineering],
+    [t.caseStudyAi, study.ai],
+    [t.caseStudyStatus, study.status],
+    [t.caseStudyLesson, study.lesson],
+  ]
+
+  return <article className="case-study-card" style={{ '--case-accent': project.accent } as React.CSSProperties}>
+    <div className="case-study-topline">
+      <span className="case-study-number">{String(index + 1).padStart(2, '0')}</span>
+      <span className="case-study-icon"><ProjectGlyphIcon name={project.icon} size={25} /></span>
+      <span className="case-study-category">{categoryLabels[locale][project.category]}</span>
+    </div>
+    <div className="case-study-heading">
+      <div>
+        <span>{t.caseStudyLabel}</span>
+        <h3>{project.name}</h3>
+      </div>
+      <div className="case-study-actions">
+        {project.url && <a href={project.url} target="_blank" rel="noreferrer">{t.openApp} <Icon name="external" size={16} /></a>}
+        {project.repository && <a className="case-study-source" href={project.repository} target="_blank" rel="noreferrer"><Icon name="github" size={17} /> {t.caseStudySource}</a>}
+      </div>
+    </div>
+    <div className="case-study-problem">
+      <strong>{t.caseStudyProblem}</strong>
+      <p>{study.problem}</p>
+    </div>
+    <dl className="case-study-details">
+      {details.map(([label, value]) => <div key={label}>
+        <dt>{label}</dt>
+        <dd>{value}</dd>
+      </div>)}
+    </dl>
+    <div className="tags">{project.technologies.map(item => <span key={item}>{item}</span>)}</div>
+  </article>
+}
+
+function Dashboard({ navigate, locale }: { navigate: (route: Route) => void; locale: Locale }) {
+  const t = ui[locale]
+  const liveProjects = projects.filter(project => project.status === 'available').length
+  const buildingProjects = projects.filter(project => project.status === 'building').length
   return <main className="page dashboard-page">
     <section className="hero">
       <div className="hero-copy">
@@ -261,7 +308,7 @@ function Dashboard({ navigate, locale, favorites, toggleFavorite }: { navigate: 
       <div className="hero-mark" aria-hidden="true">
         <div className="stamp">
           <span className="stamp-index">Nº 001</span>
-          <span className="stamp-word">VIBE<br />CODER</span>
+          <span className="stamp-word">SOFTWARE<br />+ AI</span>
           <span className="stamp-index">EST. 2026</span>
         </div>
         <div className="hero-tag hero-tag-a">{t.heroTagA}</div>
@@ -273,13 +320,16 @@ function Dashboard({ navigate, locale, favorites, toggleFavorite }: { navigate: 
 
     <section className="stats" aria-label={t.recentWorkKicker}>
       <div><strong>{String(projects.length).padStart(2, '0')}</strong><span>{t.statProjects}</span></div>
-      <div><strong>{String(activeProjects).padStart(2, '0')}</strong><span>{t.statBuilding}</span></div>
-      <div><strong>∞</strong><span>{t.statCuriosity}</span></div>
+      <div><strong>{String(liveProjects).padStart(2, '0')}</strong><span>{t.statLive}</span></div>
+      <div><strong>{String(buildingProjects).padStart(2, '0')}</strong><span>{t.statBuilding}</span></div>
     </section>
 
-    <section className="section-block">
-      <div className="section-heading"><div><span>{t.recentWorkKicker}</span><h2>{t.recentWorkTitle}</h2></div><button onClick={() => navigate('/apps')}>{t.viewAll} <Icon name="arrow" size={18} /></button></div>
-      <div className="project-grid dashboard-grid">{featured.map(project => <ProjectCard project={project} locale={locale} key={project.id} isFavorite={favorites.includes(project.id)} onToggleFavorite={() => toggleFavorite(project.id)} />)}</div>
+    <section className="section-block case-studies-section">
+      <div className="case-studies-intro">
+        <div><span className="section-kicker">{t.caseStudiesKicker}</span><h2>{t.caseStudiesTitle}</h2></div>
+        <div><p>{t.caseStudiesBody}</p><button onClick={() => navigate('/apps')}>{t.viewAll} <Icon name="arrow" size={18} /></button></div>
+      </div>
+      <div className="case-study-grid">{featuredCaseStudyIds.map((projectId, index) => <CaseStudyCard projectId={projectId} locale={locale} index={index} key={projectId} />)}</div>
     </section>
 
     <section className="process-section">
@@ -480,7 +530,7 @@ export default function App() {
 
   return <div className="app-shell">
     <NavBar route={route} navigate={navigate} theme={theme} toggleTheme={toggleTheme} locale={locale} setLocale={setLocale} open={menuOpen} setOpen={setMenuOpen} />
-    {route === '/' ? <Dashboard navigate={navigate} locale={locale} favorites={favorites} toggleFavorite={toggleFavorite} /> : <AppsPage locale={locale} favorites={favorites} toggleFavorite={toggleFavorite} />}
+    {route === '/' ? <Dashboard navigate={navigate} locale={locale} /> : <AppsPage locale={locale} favorites={favorites} toggleFavorite={toggleFavorite} />}
     <footer><span>© {new Date().getFullYear()} Bruno Rendeiro</span><span>{t.footerTagline}</span><a href="/privacidade.html">Privacidade</a></footer>
     <CookieConsent locale={locale} />
   </div>

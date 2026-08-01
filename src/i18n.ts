@@ -55,11 +55,24 @@ type UiStrings = {
   heroTagA: string
   heroTagB: string
   statProjects: string
+  statLive: string
   statBuilding: string
   statCuriosity: string
   recentWorkKicker: string
   recentWorkTitle: string
   viewAll: string
+  caseStudiesKicker: string
+  caseStudiesTitle: string
+  caseStudiesBody: string
+  caseStudyLabel: string
+  caseStudyProblem: string
+  caseStudyRole: string
+  caseStudyArchitecture: string
+  caseStudyEngineering: string
+  caseStudyAi: string
+  caseStudyStatus: string
+  caseStudyLesson: string
+  caseStudySource: string
   processKicker: string
   processTitleLead: string
   processTitleTail: string
@@ -126,7 +139,7 @@ type UiStrings = {
 export const ui: Record<Locale, UiStrings> = {
   pt: {
     goHome: 'Ir para o início',
-    brandRole: 'Vibe coder',
+    brandRole: 'Engenharia de Software · IA Aplicada',
     navDashboard: 'Dashboard',
     navApps: 'As minhas apps',
     navCv: 'CV',
@@ -148,16 +161,29 @@ export const ui: Record<Locale, UiStrings> = {
     heroTalk: 'Falar comigo',
     heroTagA: 'prompt_01 → produto real',
     heroTagB: 'a construir',
-    statProjects: 'Ideias no portfólio',
-    statBuilding: 'Apps em desenvolvimento',
+    statProjects: 'Projetos no portefólio',
+    statLive: 'Aplicações publicadas',
+    statBuilding: 'Em desenvolvimento',
     statCuriosity: 'Curiosidade para explorar',
     recentWorkKicker: 'Trabalho recente',
     recentWorkTitle: 'Apps em destaque',
     viewAll: 'Ver todas',
+    caseStudiesKicker: 'Engenharia em destaque',
+    caseStudiesTitle: 'Case studies selecionados',
+    caseStudiesBody: 'Quatro projetos que mostram como passo de um problema a um produto funcional, com decisões explícitas sobre arquitetura, segurança, IA e qualidade de entrega.',
+    caseStudyLabel: 'Case study',
+    caseStudyProblem: 'Problema',
+    caseStudyRole: 'O meu papel',
+    caseStudyArchitecture: 'Arquitetura',
+    caseStudyEngineering: 'Engenharia e qualidade',
+    caseStudyAi: 'Contributo da IA',
+    caseStudyStatus: 'Estado',
+    caseStudyLesson: 'Principal aprendizagem',
+    caseStudySource: 'Código',
     processKicker: 'O meu processo',
     processTitleLead: 'Da curiosidade',
     processTitleTail: 'ao produto.',
-    processBody: 'Vibe coding com intenção: a IA acelera o trabalho, mas cada decisão continua a servir uma ideia e uma pessoa.',
+    processBody: 'Engenharia acelerada por IA: as ferramentas aumentam a velocidade, mas arquitetura, qualidade e decisões continuam sob responsabilidade humana.',
     processStep1Title: 'Imaginar',
     processStep1Body: 'Encontrar uma ideia que vale a pena testar.',
     processStep2Title: 'Construir',
@@ -191,7 +217,7 @@ export const ui: Record<Locale, UiStrings> = {
     sourceLabel: 'Código de',
     favoriteAdd: 'Marcar como favorita',
     favoriteRemove: 'Remover dos favoritos',
-    footerTagline: 'Imaginado por um humano. Construído com IA.',
+    footerTagline: 'Desenhado e desenvolvido pelo Bruno. Acelerado com IA.',
     resourcesKicker: 'Recursos',
     resourcesTitle: 'A acompanhar o ecossistema de IA',
     leaderboardTitle: 'Leaderboard de modelos',
@@ -218,7 +244,7 @@ export const ui: Record<Locale, UiStrings> = {
   },
   en: {
     goHome: 'Go to homepage',
-    brandRole: 'Vibe coder',
+    brandRole: 'Software Engineering · Applied AI',
     navDashboard: 'Dashboard',
     navApps: 'My apps',
     navCv: 'CV',
@@ -240,16 +266,29 @@ export const ui: Record<Locale, UiStrings> = {
     heroTalk: "Let's talk",
     heroTagA: 'prompt_01 → real product',
     heroTagB: 'building',
-    statProjects: 'Ideas in the portfolio',
-    statBuilding: 'Apps in progress',
+    statProjects: 'Projects in the portfolio',
+    statLive: 'Live applications',
+    statBuilding: 'In development',
     statCuriosity: 'Curiosity to explore',
     recentWorkKicker: 'Recent work',
     recentWorkTitle: 'Featured apps',
     viewAll: 'View all',
+    caseStudiesKicker: 'Featured engineering',
+    caseStudiesTitle: 'Selected case studies',
+    caseStudiesBody: 'Four projects showing how I move from a problem to a working product, with explicit decisions about architecture, security, AI, and delivery quality.',
+    caseStudyLabel: 'Case study',
+    caseStudyProblem: 'Problem',
+    caseStudyRole: 'My role',
+    caseStudyArchitecture: 'Architecture',
+    caseStudyEngineering: 'Engineering and quality',
+    caseStudyAi: 'AI contribution',
+    caseStudyStatus: 'Status',
+    caseStudyLesson: 'Key lesson',
+    caseStudySource: 'Source',
     processKicker: 'My process',
     processTitleLead: 'From curiosity',
     processTitleTail: 'to product.',
-    processBody: 'Intentional vibe coding: AI speeds up the work, but every decision still serves an idea and a person.',
+    processBody: 'AI-accelerated engineering: the tools increase speed, while architecture, quality, and decisions remain under human ownership.',
     processStep1Title: 'Imagine',
     processStep1Body: 'Find an idea worth testing.',
     processStep2Title: 'Build',
@@ -283,7 +322,7 @@ export const ui: Record<Locale, UiStrings> = {
     sourceLabel: 'Source code for',
     favoriteAdd: 'Mark as favorite',
     favoriteRemove: 'Remove from favorites',
-    footerTagline: 'Imagined by a human. Built with AI.',
+    footerTagline: 'Designed and engineered by Bruno. Accelerated with AI.',
     resourcesKicker: 'Resources',
     resourcesTitle: 'Keeping up with the AI ecosystem',
     leaderboardTitle: 'Model leaderboard',
@@ -310,7 +349,7 @@ export const ui: Record<Locale, UiStrings> = {
   },
   de: {
     goHome: 'Zur Startseite',
-    brandRole: 'Vibe Coder',
+    brandRole: 'Softwareentwicklung · Angewandte KI',
     navDashboard: 'Dashboard',
     navApps: 'Meine Apps',
     navCv: 'Lebenslauf',
@@ -332,16 +371,29 @@ export const ui: Record<Locale, UiStrings> = {
     heroTalk: 'Kontakt aufnehmen',
     heroTagA: 'prompt_01 → echtes Produkt',
     heroTagB: 'im Aufbau',
-    statProjects: 'Ideen im Portfolio',
-    statBuilding: 'Apps in Entwicklung',
+    statProjects: 'Projekte im Portfolio',
+    statLive: 'Veröffentlichte Anwendungen',
+    statBuilding: 'In Entwicklung',
     statCuriosity: 'Neugier zu entdecken',
     recentWorkKicker: 'Neueste Arbeit',
     recentWorkTitle: 'Ausgewählte Apps',
     viewAll: 'Alle ansehen',
+    caseStudiesKicker: 'Ausgewählte Engineering-Arbeit',
+    caseStudiesTitle: 'Ausgewählte Fallstudien',
+    caseStudiesBody: 'Vier Projekte, die meinen Weg vom Problem zum funktionierenden Produkt zeigen — mit klaren Entscheidungen zu Architektur, Sicherheit, KI und Lieferqualität.',
+    caseStudyLabel: 'Fallstudie',
+    caseStudyProblem: 'Problem',
+    caseStudyRole: 'Meine Rolle',
+    caseStudyArchitecture: 'Architektur',
+    caseStudyEngineering: 'Engineering und Qualität',
+    caseStudyAi: 'Beitrag der KI',
+    caseStudyStatus: 'Status',
+    caseStudyLesson: 'Wichtigste Erkenntnis',
+    caseStudySource: 'Quellcode',
     processKicker: 'Mein Prozess',
     processTitleLead: 'Von der Neugier',
     processTitleTail: 'zum Produkt.',
-    processBody: 'Vibe Coding mit Absicht: KI beschleunigt die Arbeit, aber jede Entscheidung dient weiterhin einer Idee und einer Person.',
+    processBody: 'KI-beschleunigtes Engineering: Die Werkzeuge erhöhen das Tempo, während Architektur, Qualität und Entscheidungen in menschlicher Verantwortung bleiben.',
     processStep1Title: 'Vorstellen',
     processStep1Body: 'Eine Idee finden, die es wert ist, getestet zu werden.',
     processStep2Title: 'Bauen',
@@ -375,7 +427,7 @@ export const ui: Record<Locale, UiStrings> = {
     sourceLabel: 'Quellcode von',
     favoriteAdd: 'Als Favorit markieren',
     favoriteRemove: 'Aus Favoriten entfernen',
-    footerTagline: 'Von einem Menschen erdacht. Mit KI gebaut.',
+    footerTagline: 'Von Bruno entworfen und entwickelt. Mit KI beschleunigt.',
     resourcesKicker: 'Ressourcen',
     resourcesTitle: 'Am Puls des KI-Ökosystems',
     leaderboardTitle: 'Modell-Rangliste',

@@ -20,7 +20,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: 'team-hq',
-    name: 'Team HQ',
+    name: 'Team HQ · Athlete Closet Pal',
     category: 'ai',
     status: 'available',
     technologies: ['Lovable', 'Flowise', 'n8n', 'LLM workflows', 'Human-in-the-loop', 'Google Sheets', 'Google OAuth', 'React', 'TypeScript', 'Google Analytics'],

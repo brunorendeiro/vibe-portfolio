@@ -252,7 +252,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .empty-state p { margin: 0; color: var(--muted); font-size: 13px; }
 .empty-state button { margin-top: 20px; padding: 10px 15px; border: 2px solid var(--text); border-radius: 8px; background: var(--accent-2); color: #171410; font-size: 12px; font-weight: 700; cursor: pointer; }
 
-footer { display: flex; justify-content: space-between; padding: 24px clamp(20px, 4vw, 56px); border-top: 2px solid var(--text); color: var(--muted); font: 10px 'Space Mono', monospace; letter-spacing: .04em; }
+footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; padding: 24px clamp(20px, 4vw, 56px); border-top: 2px solid var(--text); color: var(--muted); font: 10px 'Space Mono', monospace; letter-spacing: .04em; }
+footer a { color: inherit; text-underline-offset: 3px; }
 
 @media (min-width: 900px) {
   .navlinks { display: flex; }

@@ -125,7 +125,7 @@ type UiStrings = {
   courseTitle: string
   courseProvider: string
   courseBody: string
-  courseInProgress: string
+  courseStatus: string
   friendsKicker: string
   friendsTitle: string
   toolboxTitle: string
@@ -228,11 +228,11 @@ export const ui: Record<Locale, UiStrings> = {
     learningKicker: 'A aprender agora',
     learningTitle: 'Competências em construção',
     playwrightTitle: 'Testes automáticos com Playwright',
-    playwrightBody: 'Exploração pessoal em paralelo ao trabalho: a criar testes automáticos para os projetos que desenvolvo.',
+    playwrightBody: 'Começou como exploração pessoal e passou a fazer parte do meu dia a dia profissional: escrevo testes automáticos end-to-end para os projetos em que trabalho.',
     courseTitle: 'Curso Intensivo de Automação e Agentes com IA',
     courseProvider: 'Code For All',
-    courseBody: 'Usa IA para construir automações e equipas de agentes que executam processos do teu trabalho.',
-    courseInProgress: 'A meio do curso',
+    courseBody: 'Usei IA para construir automações e equipas de agentes que executam processos de trabalho reais — o projeto final foi o Inventra, disponível aqui no portefólio.',
+    courseStatus: 'Curso concluído',
     friendsKicker: 'Fora do meu trabalho',
     friendsTitle: 'Também vale a pena espreitar',
     toolboxTitle: 'Toolbox, por Alexa',
@@ -333,11 +333,11 @@ export const ui: Record<Locale, UiStrings> = {
     learningKicker: 'Currently learning',
     learningTitle: 'Skills in progress',
     playwrightTitle: 'Automated testing with Playwright',
-    playwrightBody: "A personal exploration alongside work: building automated tests for the projects I develop.",
+    playwrightBody: "Started as personal exploration and became part of my day-to-day work: I write automated end-to-end tests for the projects I work on.",
     courseTitle: 'Intensive Course on Automation and AI Agents',
     courseProvider: 'Code For All',
-    courseBody: 'Uses AI to build automations and agent teams that run your work processes.',
-    courseInProgress: 'Halfway through the course',
+    courseBody: 'Used AI to build automations and agent teams that run real work processes — the final project was Inventra, available here in the portfolio.',
+    courseStatus: 'Course completed',
     friendsKicker: 'Outside my work',
     friendsTitle: 'Also worth a look',
     toolboxTitle: 'Toolbox, by Alexa',
@@ -438,11 +438,11 @@ export const ui: Record<Locale, UiStrings> = {
     learningKicker: 'Aktuell am Lernen',
     learningTitle: 'Fähigkeiten im Aufbau',
     playwrightTitle: 'Automatisierte Tests mit Playwright',
-    playwrightBody: 'Persönliche Erkundung neben der Arbeit: automatisierte Tests für die Projekte bauen, die ich entwickle.',
+    playwrightBody: 'Hat als persönliches Experimentieren begonnen und ist Teil meines beruflichen Alltags geworden: Ich schreibe automatisierte End-to-End-Tests für die Projekte, an denen ich arbeite.',
     courseTitle: 'Intensivkurs für Automatisierung und KI-Agenten',
     courseProvider: 'Code For All',
-    courseBody: 'Nutzt KI, um Automatisierungen und Agenten-Teams zu bauen, die deine Arbeitsprozesse ausführen.',
-    courseInProgress: 'Kurs zur Hälfte abgeschlossen',
+    courseBody: 'Ich habe KI genutzt, um Automatisierungen und Agenten-Teams zu bauen, die echte Arbeitsprozesse ausführen — das Abschlussprojekt war Inventra, hier im Portfolio verfügbar.',
+    courseStatus: 'Kurs abgeschlossen',
     friendsKicker: 'Abseits meiner Arbeit',
     friendsTitle: 'Auch einen Blick wert',
     toolboxTitle: 'Toolbox, von Alexa',

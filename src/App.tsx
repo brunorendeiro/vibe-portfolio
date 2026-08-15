@@ -379,7 +379,7 @@ function Dashboard({ navigate, locale }: { navigate: (route: Route) => void; loc
             <h3>{t.courseTitle}</h3>
             <p className="learning-provider">{t.courseProvider}</p>
             <p>{t.courseBody}</p>
-            <span className="learning-progress"><i /> {t.courseInProgress}</span>
+            <span className="learning-progress"><i /> {t.courseStatus}</span>
           </div>
         </div>
       </div>

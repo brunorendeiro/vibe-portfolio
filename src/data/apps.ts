@@ -1,7 +1,7 @@
 import type { CategoryKey, StatusKey } from '../i18n'
 
 // Glifo temático usado no cartão da app — ver `projectGlyphs` em App.tsx.
-export type ProjectGlyph = 'team' | 'wine' | 'pulse' | 'map' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice' | 'radar' | 'face' | 'wand' | 'chat' | 'vault' | 'exchange' | 'snake' | 'stopwatch' | 'tokens'
+export type ProjectGlyph = 'team' | 'wine' | 'pulse' | 'map' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice' | 'radar' | 'face' | 'wand' | 'chat' | 'vault' | 'exchange' | 'snake' | 'stopwatch' | 'tokens' | 'puzzle'
 
 export type Project = {
   id: string
@@ -249,5 +249,16 @@ export const projects: Project[] = [
     repository: 'https://github.com/brunorendeiro/universal-tokenizer',
     accent: '#10b981',
     icon: 'tokens',
+  },
+  {
+    id: 'satzbau',
+    name: 'Satzbau',
+    category: 'web',
+    status: 'available',
+    technologies: ['React', 'TypeScript', 'Vite', 'i18n (PT/EN/DE)'],
+    url: 'https://satzbau.vercel.app/',
+    repository: 'https://github.com/brunorendeiro/satzbau',
+    accent: '#ffb648',
+    icon: 'puzzle',
   },
 ]

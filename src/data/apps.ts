@@ -1,7 +1,7 @@
 import type { CategoryKey, StatusKey } from '../i18n'
 
 // Glifo temático usado no cartão da app — ver `projectGlyphs` em App.tsx.
-export type ProjectGlyph = 'team' | 'wine' | 'pulse' | 'map' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice' | 'radar' | 'face' | 'wand' | 'chat' | 'vault' | 'exchange' | 'snake' | 'stopwatch' | 'tokens' | 'puzzle'
+export type ProjectGlyph = 'wine' | 'pulse' | 'map' | 'network' | 'blueprint' | 'scan' | 'flag' | 'numbers' | 'weather' | 'route' | 'bars' | 'dice' | 'radar' | 'face' | 'wand' | 'chat' | 'vault' | 'exchange' | 'snake' | 'stopwatch' | 'tokens' | 'puzzle'
 
 export type Project = {
   id: string
@@ -18,16 +18,6 @@ export type Project = {
 // As descrições de cada app vivem em data/projectText.ts (traduzidas). Este é o
 // único ficheiro que precisas de alterar para adicionar, remover ou reordenar apps.
 export const projects: Project[] = [
-  {
-    id: 'team-hq',
-    name: 'Team HQ · Athlete Closet Pal',
-    category: 'ai',
-    status: 'available',
-    technologies: ['Lovable', 'Flowise', 'n8n', 'LLM workflows', 'Human-in-the-loop', 'Google Sheets', 'Google OAuth', 'React', 'TypeScript', 'Google Analytics'],
-    url: 'https://athlete-closet-pal.lovable.app/',
-    accent: '#b9f719',
-    icon: 'team',
-  },
   {
     id: 'wine-atlas',
     name: 'Wine Atlas',

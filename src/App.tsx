@@ -44,7 +44,6 @@ function Icon({ name, size = 20 }: { name: keyof typeof icons; size?: number }) 
 
 // Glifos temáticos usados nos cartões de projeto — ver `ProjectGlyph` em data/apps.ts.
 const projectGlyphs: Record<ProjectGlyph, ReactElement> = {
-  team: <><circle cx="8" cy="7" r="3" /><path d="M2.5 20v-2a5.5 5.5 0 0 1 11 0v2" /><rect x="16" y="4" width="5" height="4" rx="1" /><rect x="16" y="10" width="5" height="4" rx="1" /><rect x="16" y="16" width="5" height="4" rx="1" /></>,
   wine: <><path d="M7 3h10c0 6-1.7 9.5-5 10.5C8.7 12.5 7 9 7 3Z" /><path d="M12 13.5V20M8.5 20h7" /><path d="M8 8h8" /></>,
   pulse: <><path d="M3 12h4l2-7 4 14 2-7h6" /></>,
   map: <><path d="M9 3 4 6v15l5-3 6 3 5-3V3l-5 3-6-3Z" /><path d="M9 3v15M15 6v15" /></>,

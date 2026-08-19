@@ -1,7 +1,6 @@
 import type { Locale } from '../i18n'
 
 export const featuredCaseStudyIds = [
-  'team-hq',
   'os-analyzer',
   'universal-tokenizer',
   'wine-atlas',
@@ -21,15 +20,6 @@ export type CaseStudyCopy = {
 
 export const caseStudyText: Record<Locale, Record<FeaturedCaseStudyId, CaseStudyCopy>> = {
   pt: {
-    'team-hq': {
-      problem: 'Centralizar atletas, equipamentos, stock, encomendas e aprovações num fluxo simples para administradores e membros.',
-      role: 'Desenhei a PoC e o fluxo end-to-end, ligando autenticação, dados operacionais, automação e assistência por IA.',
-      architecture: 'Frontend React/TypeScript criado com Lovable, Google OAuth, assistente Flowise, workflows n8n, Google Sheets e LLM para rascunhos de email.',
-      engineering: 'As decisões ficam registadas, as operações críticas seguem passos determinísticos e nenhum email gerado por IA é enviado sem revisão humana.',
-      ai: 'A IA apoia a conversa e prepara rascunhos; as aprovações, alterações de stock e registos continuam controlados pelo workflow.',
-      status: 'PoC funcional publicada.',
-      lesson: 'Human-in-the-loop e fronteiras determinísticas tornam a automação com IA mais segura e explicável.',
-    },
     'os-analyzer': {
       problem: 'Permitir uma primeira auditoria de aplicações públicas O11 e ODC sem acesso ao código-fonte ou ao Service Studio.',
       role: 'Desenhei e implementei o pipeline de análise, o mapeamento técnico, as verificações de segurança e a geração do relatório.',
@@ -59,15 +49,6 @@ export const caseStudyText: Record<Locale, Record<FeaturedCaseStudyId, CaseStudy
     },
   },
   en: {
-    'team-hq': {
-      problem: 'Bring athletes, kit, stock, orders, and approvals into one clear workflow for administrators and members.',
-      role: 'I designed the PoC and its end-to-end flow, connecting authentication, operational data, automation, and AI assistance.',
-      architecture: 'React/TypeScript frontend built with Lovable, Google OAuth, a Flowise assistant, n8n workflows, Google Sheets, and an LLM for email drafts.',
-      engineering: 'Decisions are logged, critical operations follow deterministic steps, and no AI-generated email is sent without human review.',
-      ai: 'AI supports the conversation and prepares drafts; approvals, stock changes, and records remain controlled by the workflow.',
-      status: 'Live functional PoC.',
-      lesson: 'Human-in-the-loop and deterministic boundaries make AI automation safer and easier to explain.',
-    },
     'os-analyzer': {
       problem: 'Enable an initial audit of public O11 and ODC applications without source-code or Service Studio access.',
       role: 'I designed and implemented the analysis pipeline, technical mapping, security checks, and report generation.',
@@ -97,15 +78,6 @@ export const caseStudyText: Record<Locale, Record<FeaturedCaseStudyId, CaseStudy
     },
   },
   de: {
-    'team-hq': {
-      problem: 'Athleten, Ausrüstung, Bestand, Bestellungen und Freigaben in einem klaren Ablauf für Admins und Mitglieder bündeln.',
-      role: 'Ich habe die PoC und den End-to-End-Ablauf entworfen und Authentifizierung, Betriebsdaten, Automatisierung und KI-Unterstützung verbunden.',
-      architecture: 'React/TypeScript-Frontend mit Lovable, Google OAuth, Flowise-Assistent, n8n-Workflows, Google Sheets und ein LLM für E-Mail-Entwürfe.',
-      engineering: 'Entscheidungen werden protokolliert, kritische Vorgänge bleiben deterministisch und keine KI-generierte E-Mail wird ohne menschliche Prüfung versendet.',
-      ai: 'KI unterstützt die Konversation und erstellt Entwürfe; Freigaben, Bestandsänderungen und Protokolle bleiben workflow-gesteuert.',
-      status: 'Veröffentlichte funktionale PoC.',
-      lesson: 'Human-in-the-loop und deterministische Grenzen machen KI-Automatisierung sicherer und nachvollziehbarer.',
-    },
     'os-analyzer': {
       problem: 'Eine erste Prüfung öffentlicher O11- und ODC-Anwendungen ohne Quellcode- oder Service-Studio-Zugriff ermöglichen.',
       role: 'Ich habe Analyse-Pipeline, technische Zuordnung, Sicherheitsprüfungen und Berichtserstellung entworfen und implementiert.',

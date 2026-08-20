@@ -3,7 +3,7 @@ import { projects, type Project, type ProjectGlyph } from './data/apps'
 import { caseStudyText, featuredCaseStudyIds, type FeaturedCaseStudyId } from './data/caseStudies'
 import { getProjectDescription } from './data/projectText'
 import { categoryLabels, detectLocale, locales, statusLabels, ui, type CategoryKey, type Locale } from './i18n'
-import { getStoredConsent, loadAnalytics } from './analytics'
+import { getStoredConsent, loadAnalytics, loadAds } from './analytics'
 import CookieConsent from './CookieConsent'
 
 type Route = '/' | '/apps'
@@ -516,7 +516,10 @@ export default function App() {
   useEffect(() => { setMenuOpen(false) }, [route])
 
   useEffect(() => {
-    if (getStoredConsent() === 'granted') loadAnalytics()
+    if (getStoredConsent() === 'granted') {
+      loadAnalytics()
+      loadAds()
+    }
   }, [])
 
   useEffect(() => {

@@ -32,6 +32,13 @@ export function loadAnalytics() {
   gtag('config', GA_MEASUREMENT_ID)
 }
 
+/** Disabled for now: AdSense Auto ads (enable_page_level_ads) includes
+ * Vignette ads — full-screen interstitials shown between page loads, mostly
+ * on mobile — which was blocking the whole portfolio behind a solid-color
+ * overlay. There's no reliable code-level way to opt out of just Vignette;
+ * it has to be turned off in the AdSense dashboard (Ads > By site > Edit >
+ * Ad settings > Overlay formats). Re-enable the call to this below setConsent
+ * once that's confirmed off. */
 export function loadAds() {
   if (document.getElementById('adsbygoogle-script')) return
   const script = document.createElement('script')
@@ -49,6 +56,5 @@ export function setConsent(value: Consent) {
   window.localStorage.setItem(CONSENT_KEY, value)
   if (value === 'granted') {
     loadAnalytics()
-    loadAds()
   }
 }

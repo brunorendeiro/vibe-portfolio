@@ -86,6 +86,7 @@ type UiStrings = {
   appsKicker: string
   appsTitleLead: string
   appsIntro: string
+  appsAbout: string
   finderKicker: string
   finderTitle: string
   finderBody: string
@@ -193,6 +194,7 @@ export const ui: Record<Locale, UiStrings> = {
     appsKicker: 'Projetos independentes',
     appsTitleLead: 'As minhas apps',
     appsIntro: 'Explora aplicações para aprender, trabalhar, jogar e resolver pequenos problemas do dia a dia. Cada projeto explica claramente para quem serve e o que permite fazer.',
+    appsAbout: 'Nenhuma destas apps é uma maquete. Cada uma nasce de um problema real ou de uma curiosidade concreta — resolver algo do meu dia a dia, testar uma tecnologia nova, ou preparar-me para uma certificação — e é construída, publicada e mantida até funcionar de verdade. A stack varia conforme o problema: React e TypeScript para a maioria, Python quando faz mais sentido, IA aplicada onde acrescenta valor real e não só porque está na moda. Podes abrir o código-fonte de quase todas diretamente no GitHub.',
     finderKicker: 'Explorar o portefólio',
     finderTitle: 'Encontra a app certa para ti',
     finderBody: 'Pesquisa por um tema, uma necessidade ou uma tecnologia. Também podes escolher diretamente na lista e saltar para todos os detalhes.',
@@ -298,6 +300,7 @@ export const ui: Record<Locale, UiStrings> = {
     appsKicker: 'Independent projects',
     appsTitleLead: 'My apps',
     appsIntro: 'Explore apps for learning, working, playing, and solving small everyday problems. Each project clearly explains who it is for and what it helps you do.',
+    appsAbout: 'None of these apps are mockups. Each one starts from a real problem or a specific curiosity — fixing something in my own day-to-day, trying out a new technology, or preparing for a certification — and gets built, shipped, and kept working end to end. The stack changes with the problem: React and TypeScript for most of them, Python where it makes more sense, and applied AI wherever it adds real value, not because it is trendy. You can open the source code for almost all of them directly on GitHub.',
     finderKicker: 'Explore the portfolio',
     finderTitle: 'Find the right app for you',
     finderBody: 'Search by topic, need, or technology. You can also pick directly from the list and jump to the full details.',
@@ -403,6 +406,7 @@ export const ui: Record<Locale, UiStrings> = {
     appsKicker: 'Unabhängige Projekte',
     appsTitleLead: 'Meine Apps',
     appsIntro: 'Entdecke Apps zum Lernen, Arbeiten, Spielen und Lösen kleiner Alltagsprobleme. Jedes Projekt erklärt klar, für wen es gedacht ist und was du damit tun kannst.',
+    appsAbout: 'Keine dieser Apps ist nur eine Attrappe. Jede entsteht aus einem echten Problem oder einer konkreten Neugier — etwas aus meinem Alltag lösen, eine neue Technologie ausprobieren oder mich auf eine Zertifizierung vorbereiten — und wird gebaut, veröffentlicht und gepflegt, bis sie wirklich funktioniert. Der Tech-Stack richtet sich nach dem Problem: React und TypeScript für die meisten, Python wo es mehr Sinn ergibt, und angewandte KI dort, wo sie echten Mehrwert bringt, nicht weil es gerade Trend ist. Den Quellcode fast aller Apps kannst du direkt auf GitHub öffnen.',
     finderKicker: 'Portfolio entdecken',
     finderTitle: 'Finde die passende App für dich',
     finderBody: 'Suche nach Thema, Bedürfnis oder Technologie. Du kannst auch direkt aus der Liste wählen und zu allen Details springen.',

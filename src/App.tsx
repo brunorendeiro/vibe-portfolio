@@ -437,6 +437,7 @@ function AppsPage({ locale, favorites, toggleFavorite }: { locale: Locale; favor
       <span className="section-kicker">{t.appsKicker}</span>
       <h1>{t.appsTitleLead}<span>.</span></h1>
       <p>{t.appsIntro}</p>
+      <p className="page-intro-about">{t.appsAbout}</p>
     </section>
 
     <section className="project-finder" aria-labelledby="project-finder-title">

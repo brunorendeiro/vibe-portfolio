@@ -3,8 +3,9 @@ import { projects, type Project, type ProjectGlyph } from './data/apps'
 import { caseStudyText, featuredCaseStudyIds, type FeaturedCaseStudyId } from './data/caseStudies'
 import { getProjectDescription } from './data/projectText'
 import { categoryLabels, detectLocale, locales, statusLabels, ui, type CategoryKey, type Locale } from './i18n'
-import { getStoredConsent, loadAnalytics } from './analytics'
+import { getStoredConsent, loadAnalytics, loadAds } from './analytics'
 import CookieConsent from './CookieConsent'
+import AdSlot from './AdSlot'
 
 type Route = '/' | '/apps'
 type Filter = 'all' | CategoryKey
@@ -503,6 +504,8 @@ function AppsPage({ locale, favorites, toggleFavorite }: { locale: Locale; favor
           <p>{query ? t.noResultsBody : t.emptyBody}</p>
           {query && <button type="button" onClick={() => { setQuery(''); setFilter('all') }}>{t.clearFilters}</button>}
         </section>}
+
+    {visible.length > 0 && <AdSlot locale={locale} />}
   </main>
 }
 
@@ -519,6 +522,7 @@ export default function App() {
   useEffect(() => {
     if (getStoredConsent() === 'granted') {
       loadAnalytics()
+      loadAds()
     }
   }, [])
 

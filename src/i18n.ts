@@ -135,6 +135,7 @@ type UiStrings = {
   cookieBody: string
   cookieAccept: string
   cookieReject: string
+  adLabel: string
 }
 
 export const ui: Record<Locale, UiStrings> = {
@@ -243,6 +244,7 @@ export const ui: Record<Locale, UiStrings> = {
     cookieBody: 'Uso o Google Analytics e o Google AdSense para perceber visitas e mostrar anúncios. Aceitas cookies de análise e publicidade?',
     cookieAccept: 'Aceitar',
     cookieReject: 'Recusar',
+    adLabel: 'Publicidade',
   },
   en: {
     goHome: 'Go to homepage',
@@ -349,6 +351,7 @@ export const ui: Record<Locale, UiStrings> = {
     cookieBody: 'I use Google Analytics and Google AdSense to understand visits and show ads. Do you accept analytics and advertising cookies?',
     cookieAccept: 'Accept',
     cookieReject: 'Reject',
+    adLabel: 'Advertisement',
   },
   de: {
     goHome: 'Zur Startseite',
@@ -455,5 +458,6 @@ export const ui: Record<Locale, UiStrings> = {
     cookieBody: 'Ich verwende Google Analytics und Google AdSense, um Besuche zu verstehen und Anzeigen zu schalten. Akzeptierst du Analyse- und Werbe-Cookies?',
     cookieAccept: 'Akzeptieren',
     cookieReject: 'Ablehnen',
+    adLabel: 'Werbung',
   },
 }
